@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8704020427351475592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8704020427351475594}
+  - component: {fileID: 8704020427351475593}
+  - component: {fileID: 8704020427351475595}
+  m_Layer: 0
+  m_Name: GeneratePower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8704020427351475594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8704020427351475592}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8704020427351475593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8704020427351475592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da342bc36a2891947a14598edac33138, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power:
+  - {fileID: 11400000, guid: 7feb92788068b764ba706a6f3a5e4771, type: 2}
+  - {fileID: 11400000, guid: ffe2c5f438b1e844cb81a773332a048f, type: 2}
+  - {fileID: 11400000, guid: 38f32101604e2764aae9eabe4a18707f, type: 2}
+  maxRate: 5
+--- !u!114 &8704020427351475595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8704020427351475592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0222893375c5b8e4ea3fc3811e07f98b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expSlider: {fileID: 0}
+  initialExp: 150
+  expIncreasePerLevel: 50
+  constantA: 0.3
+  hideTime: 1
+  background: {fileID: 0}
+  fill: {fileID: 0}
+  levelUpEffect: {fileID: 8732275049659207189, guid: 2446f9ed3f19ccc4fbd6611a500cf748,
+    type: 3}
+  playerTransform: {fileID: 0}
+  minAnchor:
+  - {x: 0.05, y: 0}
+  - {x: 0.37, y: 0}
+  - {x: 0.69, y: 0}
+  maxAnchor:
+  - {x: 0.31, y: 1}
+  - {x: 0.63, y: 1}
+  - {x: 0.95, y: 1}
+  bodyUI: {fileID: 5107713786358853164, guid: 28a63b9ba4d56f24d8d589224cea47d9, type: 3}
+  delay: 0.5
+  cameraShake: {fileID: 0}
+  player: {fileID: 0}
+  displayUI: {fileID: 0}
+  currentExp: 0

@@ -25,11 +25,16 @@ public class EnemySpawner : MonoBehaviour
     {
         currentIndexWayShoot = 0;
         timeBetweenWaveShoot = 0;
-        StartCoroutine(SpawnEnemyShoot());
+        shootCoroutine = StartCoroutine(SpawnEnemyShoot());
     }
     private void Update()
     {
-        if(transform.GetChild(0).childCount == 0)
+        EnemyShootSpawn();
+        //EnemyBoomSpawn();
+    }
+    private void EnemyShootSpawn()
+    {
+        if (transform.GetChild(0).childCount == 0)
         {
             isSpawnShoot = true;
             timeBetweenWaveShoot = initTimeBetweenWaveShoot;
@@ -38,15 +43,6 @@ public class EnemySpawner : MonoBehaviour
         {
             isSpawnShoot = false;
         }
-        if (transform.GetChild(1).childCount == 0)
-        {
-            isSpawnBoom = true;
-        }
-        EnemyShootSpawn();
-        EnemyBoomSpawn();
-    }
-    private void EnemyShootSpawn()
-    {
         if (isSpawnShoot && shootCoroutine == null)
         {
             shootCoroutine = StartCoroutine(SpawnEnemyShoot());
@@ -59,6 +55,10 @@ public class EnemySpawner : MonoBehaviour
     }
     private void EnemyBoomSpawn()
     {
+        if (transform.GetChild(1).childCount == 0)
+        {
+            isSpawnBoom = true;
+        }
         if (isSpawnBoom && boomCoroutine == null)
         {
             boomCoroutine = StartCoroutine(SpawnEnemyBoom());

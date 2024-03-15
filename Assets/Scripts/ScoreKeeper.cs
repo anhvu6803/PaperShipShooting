@@ -32,11 +32,11 @@ public class ScoreKeeper : MonoBehaviour
     {
         if (score < 999999999)
         {
-            score += value;
             if(playerLevel != null)
             {
-                score *= playerLevel.GetLevel();
+                value *= playerLevel.GetLevel();
             }
+            score += value;
         }
         Mathf.Clamp(score, 0, 999999999);
         

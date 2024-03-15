@@ -33,7 +33,6 @@ public class LevelUpEnemy : MonoBehaviour
     {
         currentLevel = 1;
         level = playerLevel.GetLevel();
-        Debug.Log(level + "LV");
         health = GetComponent<Health>();
         shooter = GetComponent<Shooter>();
         enemyDamage = GetComponent<DamageDealer>();
@@ -90,8 +89,6 @@ public class LevelUpEnemy : MonoBehaviour
     {
         if (bulletDamage != null)
         {
-            Debug.Log("LevelUpBulletDamage");
-            Debug.Log(bulletDamage.GetDamage() + "dmg");
             currentDamage = bonusDamage;
             if (currentLevel % 3 == 0)
             {

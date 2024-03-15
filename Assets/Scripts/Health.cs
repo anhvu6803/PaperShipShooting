@@ -42,7 +42,6 @@ public class Health : MonoBehaviour
                 powerShield.TakeDamageShield(powerShield.GetMaxHealth());
                 existTimeShield = powerShield.GetExistTime();                
             }
-            Debug.Log(existTimeShield);
         }
     }
     public float GetHealth()

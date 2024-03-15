@@ -667,13 +667,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1ccf883572de0cd4d9f9f50d873fac3e, type: 2}
   - {fileID: 11400000, guid: bfbbb0e98a7419b45b0409173c839356, type: 2}
   - {fileID: 11400000, guid: c168e73781b3ec343881e9942d6dcd1c, type: 2}
-  timeBetweenWaveShoot: 4
+  initTimeBetweenWaveShoot: 8
   waveConfigBoom:
   - {fileID: 11400000, guid: 8e1f9fdd92c5e5f469ecc1639ff8ab89, type: 2}
   - {fileID: 11400000, guid: 7304f0868e8667d418f5090764f4b066, type: 2}
   - {fileID: 11400000, guid: a95ed8f42aef83a498b50cd330729b26, type: 2}
   - {fileID: 11400000, guid: 5ef3407ecc593ec48a875d1d35e25ad0, type: 2}
-  timeBetweenWaveBoom: 3
+  timeBetweenWaveBoom: 6
 --- !u!4 &207906835
 Transform:
   m_ObjectHideFlags: 0
@@ -2365,7 +2365,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1923941623
 Transform:
   m_ObjectHideFlags: 0

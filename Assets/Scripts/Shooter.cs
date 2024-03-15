@@ -82,7 +82,6 @@ public class Shooter : MonoBehaviour
                 {
                     GameObject instance = Instantiate(bullet, RandomPositionBullet(i), Quaternion.identity);
                     instance.SetActive(true);
-                    Debug.Log(instance.GetComponent<DamageDealer>().GetDamage());
                     Rigidbody2D rb = instance.GetComponent<Rigidbody2D>();
                     if (rb != null)
                     {

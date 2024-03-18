@@ -10,7 +10,6 @@ public class PowerUltimate : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float paddingLeft;
     [SerializeField] private float paddingRight;
-    [SerializeField] private float apearPosY;
     [SerializeField] private float timeBetweenSpawn;
     [SerializeField] private float speed;
     [SerializeField] private float destroyTime;
@@ -40,6 +39,6 @@ public class PowerUltimate : MonoBehaviour
     }
     private Vector3 RandomPosition()
     {
-        return new Vector3(Random.Range(playerTransform.position.x - paddingLeft, playerTransform.position.x + paddingRight), apearPosY, 0);
+        return new Vector3(Random.Range(playerTransform.position.x - paddingLeft, playerTransform.position.x + paddingRight), playerTransform.position.y, 0);
     }
 }

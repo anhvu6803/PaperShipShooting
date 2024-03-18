@@ -27,6 +27,10 @@ public class WaveConfigSO : ScriptableObject
     {
         return pathWay[0].GetChild(0);
     }
+    public Transform GetDangerAppearPoint()
+    {
+        return pathWay[0].GetChild(1);
+    }
     public List<Transform> GetPathWave(int index)
     {
         List<Transform> list = new List<Transform>();

@@ -6,30 +6,17 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private float paddingTop;
-    [SerializeField] private float paddingBottom;
-    [SerializeField] private float paddingLeft;
-    [SerializeField] private float paddingRight;
     private Rigidbody2D rb;
     private Vector2 moveDirection;
     private Camera mainCamera;
-    private Vector2 minBound;
-    private Vector2 maxBound;
     void Start()
     {
         mainCamera = Camera.main;
         rb = GetComponent<Rigidbody2D>();
-        InitBound();
     }
     void Update()
     {
         ProcessInput();
-        KeepPlayerOnScreen();
-    }
-    private void InitBound()
-    {
-        minBound = mainCamera.ViewportToWorldPoint(new Vector2(0, 0));
-        maxBound = mainCamera.ViewportToWorldPoint(new Vector2(1, 1));
     }
     private void FixedUpdate()
     {
@@ -55,14 +42,6 @@ public class Player : MonoBehaviour
             rb.velocity = Vector2.zero;
             return;
         }
-    }
-
-    private void KeepPlayerOnScreen()
-    {
-        Vector2 newPostion;
-        newPostion.x = Mathf.Clamp(transform.position.x, minBound.x + paddingLeft, maxBound.x - paddingRight);
-        newPostion.y = Mathf.Clamp(transform.position.y, minBound.y + paddingBottom, maxBound.y - paddingTop);
-        transform.position = newPostion;
     }
     private bool CheckSamePosition(Vector2 source, Vector2 target)
     {

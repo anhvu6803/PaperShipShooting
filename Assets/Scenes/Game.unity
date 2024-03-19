@@ -658,6 +658,7 @@ MonoBehaviour:
   timeBetweenWaveBoom: 6
   dangerObject: {fileID: 2277992817803540748, guid: 8c4a60a7712698d44800a226cc7aec6f,
     type: 3}
+  timeAnnouceDangerBeforeSpawnEnemy: 1
 --- !u!4 &207906835
 Transform:
   m_ObjectHideFlags: 0
@@ -1651,7 +1652,6 @@ MonoBehaviour:
   playerTransform: {fileID: 1924322231}
   paddingLeft: 0.2
   paddingRight: 0.2
-  apearPosY: -10
   timeBetweenSpawn: 0.7
   speed: 15
   destroyTime: 2

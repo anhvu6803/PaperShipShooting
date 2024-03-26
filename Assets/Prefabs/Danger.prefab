@@ -146,5 +146,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paddingTop: 1.5
   paddingBottom: 1.5
-  paddingLeft: 0.5
-  paddingRight: 0.5
+  paddingLeft: 1
+  paddingRight: 1

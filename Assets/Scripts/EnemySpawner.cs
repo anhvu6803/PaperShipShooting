@@ -7,10 +7,12 @@ public class EnemySpawner : MonoBehaviour
     [Header("General")]
     [SerializeField] private bool isLooping;
     [SerializeField] private Transform player;
+    private PowerLevelUp playerLevel;
     [Header("EnemyShooter")]
     [SerializeField] private List<WaveConfigSO> waveConfigShoot;
     [SerializeField] private float initTimeBetweenWaveShoot;
-    private float timeBetweenWaveShoot;
+    [SerializeField] private float minTimeWaveShoot;
+    [SerializeField] private float timeBetweenWaveShoot;
     private int currentIndexWayShoot;
     private WaveConfigSO currentWaveShoot;
     private Coroutine shootCoroutine;
@@ -20,9 +22,14 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float timeBetweenWaveBoom;
     [SerializeField] private GameObject dangerObject;
     [SerializeField] private float timeAnnouceDangerBeforeSpawnEnemy;
+    [SerializeField] private float minTimeWaveBoom;
     private WaveConfigSO currentWaveBoom;
     private Coroutine boomCoroutine;
     private bool isSpawnBoom;
+    private void Awake()
+    {
+        playerLevel = FindObjectOfType<PowerLevelUp>();
+    }
     private void Start()
     {
         currentIndexWayShoot = 0;
@@ -89,15 +96,17 @@ public class EnemySpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(timeBetweenWaveBoom - timeAnnouceDangerBeforeSpawnEnemy);
             currentWaveBoom = waveConfigBoom[Random.Range(0, waveConfigBoom.Count)];
-            GameObject dangerInstance = Instantiate(dangerObject, currentWaveBoom.GetDangerAppearPoint().position, Quaternion.identity, transform.GetChild(1));
             currentWaveBoom.ModifyPathYPos(player.position.y);
+            GameObject dangerInstance = Instantiate(dangerObject, currentWaveBoom.GetDangerAppearPoint().position, Quaternion.identity, transform.GetChild(1));
             yield return new WaitForSeconds(timeAnnouceDangerBeforeSpawnEnemy);
             Destroy(dangerInstance);
             for (int i = 0; i < currentWaveBoom.GetEnemyCount(); i++)
             {
                 Instantiate(currentWaveBoom.GetEnemy(i), currentWaveBoom.GetStartPointWave().position, Quaternion.Euler(0, 0, 180), transform.GetChild(1));
                 yield return new WaitForSeconds(currentWaveBoom.GetEnemySpawnTime());
-            }        
+            }
+            Mathf.Clamp(timeBetweenWaveBoom -= Mathf.Clamp(playerLevel.GetLevel()/10, 0, 1), 0, minTimeWaveBoom);
+            Debug.Log(timeBetweenWaveBoom +"boo");
         } while (isLooping);
     }
     private IEnumerator SpawnEnemyShoot()
@@ -110,5 +119,7 @@ public class EnemySpawner : MonoBehaviour
             Instantiate(currentWaveShoot.GetEnemy(i), currentWaveShoot.GetStartPointWave().position, Quaternion.Euler(0, 0, 180), transform.GetChild(0));
             yield return new WaitForSeconds(currentWaveShoot.GetEnemySpawnTime());
         }
+        Mathf.Clamp(timeBetweenWaveShoot -= Mathf.Clamp(playerLevel.GetLevel() / 10, 0, 1), 0, minTimeWaveShoot);
+        Debug.Log(timeBetweenWaveShoot +"sh");
     }
 }

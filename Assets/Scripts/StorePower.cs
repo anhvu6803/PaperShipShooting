@@ -6,6 +6,24 @@ public class StorePower : MonoBehaviour
 {
     [SerializeField] private int shieldCount = 0;
     [SerializeField] private int ultimateCount = 0;
+    private static StorePower instance;
+    private void Awake()
+    {
+        ManageStorePowerSingleton();
+    }
+    private void ManageStorePowerSingleton()
+    {
+        if (instance != null)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
     public int GetShieldCount()
     {
         return shieldCount;

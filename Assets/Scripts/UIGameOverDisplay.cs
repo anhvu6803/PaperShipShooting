@@ -132,9 +132,7 @@ public class UIGameOverDisplay : MonoBehaviour
         if(currentExp < maxExp && expObject.transform.GetChild(1).gameObject.activeSelf == true) 
         {
             currentExp += Time.deltaTime * speedExp;
-            Debug.Log(currentExp);
             currentExp = Mathf.Clamp(Mathf.FloorToInt(currentExp), 0, maxExp);
-
             expText.text = currentExp.ToString();
         }
     }
@@ -155,7 +153,6 @@ public class UIGameOverDisplay : MonoBehaviour
         }
         maxExp = Mathf.FloorToInt((tempExp * adjustConst) / equationExpB);
         maxExp = Mathf.Clamp(maxExp, 0, maxExpEarn);
-        Debug.Log(maxExp);
     }
     private void RunCoin()
     {
@@ -163,7 +160,6 @@ public class UIGameOverDisplay : MonoBehaviour
         {
             currentCoin += Time.deltaTime * speedCoin;
             currentCoin = Mathf.Clamp(Mathf.FloorToInt(currentCoin), 1, maxCoin);
-            Debug.Log(currentCoin);
             coinText.text = currentCoin.ToString();
         }
     }
@@ -184,7 +180,6 @@ public class UIGameOverDisplay : MonoBehaviour
         }
         maxCoin = Mathf.FloorToInt((tempExp * adjustConst) / equationCoinB);
         maxCoin = Mathf.Clamp(maxCoin, 1, maxCoinEarn);
-        Debug.Log(maxCoin);
     }
     private void RunColor(Image image, float colorChange, Transform parent = null)
     {

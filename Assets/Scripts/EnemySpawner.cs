@@ -105,8 +105,8 @@ public class EnemySpawner : MonoBehaviour
                 Instantiate(currentWaveBoom.GetEnemy(i), currentWaveBoom.GetStartPointWave().position, Quaternion.Euler(0, 0, 180), transform.GetChild(1));
                 yield return new WaitForSeconds(currentWaveBoom.GetEnemySpawnTime());
             }
-            Mathf.Clamp(timeBetweenWaveBoom -= Mathf.Clamp(playerLevel.GetLevel()/10, 0, 1), 0, minTimeWaveBoom);
-            Debug.Log(timeBetweenWaveBoom +"boo");
+            timeBetweenWaveBoom = Mathf.Clamp(timeBetweenWaveBoom - Mathf.Clamp((float)playerLevel.GetLevel() / 10, 0, 1), 
+                minTimeWaveBoom, float.MaxValue);
         } while (isLooping);
     }
     private IEnumerator SpawnEnemyShoot()
@@ -119,7 +119,7 @@ public class EnemySpawner : MonoBehaviour
             Instantiate(currentWaveShoot.GetEnemy(i), currentWaveShoot.GetStartPointWave().position, Quaternion.Euler(0, 0, 180), transform.GetChild(0));
             yield return new WaitForSeconds(currentWaveShoot.GetEnemySpawnTime());
         }
-        Mathf.Clamp(timeBetweenWaveShoot -= Mathf.Clamp(playerLevel.GetLevel() / 10, 0, 1), 0, minTimeWaveShoot);
-        Debug.Log(timeBetweenWaveShoot +"sh");
+        initTimeBetweenWaveShoot = Mathf.Clamp(initTimeBetweenWaveShoot - Mathf.Clamp((float)playerLevel.GetLevel() / 10, 0, 1),
+                minTimeWaveShoot, float.MaxValue);
     }
 }

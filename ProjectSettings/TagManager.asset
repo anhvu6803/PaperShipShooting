@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Bullet
   - Power
+  - SonicBoom
   layers:
   - Default
   - TransparentFX

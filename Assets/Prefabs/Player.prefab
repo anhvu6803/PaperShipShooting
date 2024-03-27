@@ -152,6 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9084347542767881495}
   - component: {fileID: 8951389675265162596}
+  - component: {fileID: 3307901971244177180}
   m_Layer: 6
   m_Name: PlayerShip1
   m_TagString: Untagged
@@ -215,7 +216,7 @@ SpriteRenderer:
   m_SortingLayerID: 1363869057
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c7e1e040abd83fc4488af37330d8e51a, type: 3}
+  m_Sprite: {fileID: -1017227626, guid: d4fc5ae7d0b962543a606bd115834267, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -226,6 +227,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3307901971244177180
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296887132503241185}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a90047183b3c84459a16bcfd6196b27, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2481103806163531911
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,7 +371,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2481103806163531911}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 738b58db3c005e34e833af1d0a09267f, type: 3}
   m_Name: 
@@ -378,12 +400,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 200
   maxHealth: 200
-  isApplyCameraShake: 1
   score: 0
   isPlayer: 1
   hasShield: 0
+  isApplyCameraShake: 1
   explosionEffect: {fileID: 4267178648959492308, guid: ccb981d1295c2d14e97ba00ea43eede4,
     type: 3}
+  dieAnimation: {fileID: 7400000, guid: 6129dddaab5e2f44dbc7a44469aba846, type: 2}
+  playerSprite: {fileID: 296887132503241185}
+  sonicBoom: {fileID: 0}
+  sonicBoomExistTime: 0
+  enemySpawn: {fileID: 0}
 --- !u!114 &5588949438794045101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,8 +425,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paddingTop: 1.5
   paddingBottom: 1.5
-  paddingLeft: 0.5
-  paddingRight: 0.5
+  paddingLeft: 1
+  paddingRight: 1
 --- !u!1001 &4125686082839259925
 PrefabInstance:
   m_ObjectHideFlags: 0

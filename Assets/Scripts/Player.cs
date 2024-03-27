@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float speed;
+    private Health health;
     private Rigidbody2D rb;
     private Vector2 moveDirection;
     private Camera mainCamera;
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     {
         mainCamera = Camera.main;
         rb = GetComponent<Rigidbody2D>();
+        health = GetComponent<Health>();
     }
     void Update()
     {
@@ -20,7 +22,7 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (moveDirection == Vector2.zero) return;
+        if (moveDirection == Vector2.zero || health.GetPlayerDie()) return;
         rb.velocity = moveDirection * speed * Time.deltaTime;
     }
     public void ModifySpeed(int bonusSpeed)

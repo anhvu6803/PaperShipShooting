@@ -20,6 +20,7 @@ public class Shooter : MonoBehaviour
     private Vector2 minBound;
     [Header("Player")]
     [SerializeField] private bool isPlayer;
+    [SerializeField] private Health health;
     private void Start()
     {
         numberBullet = 1;
@@ -31,9 +32,13 @@ public class Shooter : MonoBehaviour
         {
             isFiring = true;
         }
-        if (isPlayer)
+        if (isPlayer && !health.GetPlayerDie())
         {
             isFiring = true;
+        }
+        else if(isPlayer && health.GetPlayerDie()) 
+        {
+            isFiring = false;
         }
         Fire();
     }

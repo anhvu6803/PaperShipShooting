@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    [Header("General")]
     [SerializeField] private float health;
     [SerializeField] private float maxHealth;
-    [SerializeField] private bool isApplyCameraShake;
     [SerializeField] private int score;
+    [Header("Player")]
     [SerializeField] private bool isPlayer;
     [SerializeField] private bool hasShield;
+    [SerializeField] private bool isApplyCameraShake;
     [SerializeField] private ParticleSystem explosionEffect;
+    [SerializeField] private AnimationClip dieAnimation;
+    [SerializeField] private GameObject playerSprite;
+    [SerializeField] private GameObject sonicBoom;
+    [SerializeField] private EnemySpawner enemySpawn;
+    [SerializeField] private CircleCollider2D playerCollider;
     private ScoreKeeper scoreKeeper;
     private CameraShake shake;
     private StorePower storePower;
     private PowerShield powerShield;
     private PowerLevelUp powerLevelUp;
-    private LevelManager levelManager;
     private float existTimeShield;
+    private bool isPlayerDie;
     private void Awake()
     {
         shake = FindObjectOfType<CameraShake>();
@@ -25,10 +32,10 @@ public class Health : MonoBehaviour
         storePower = FindObjectOfType<StorePower>();
         powerShield = FindObjectOfType<PowerShield>();
         powerLevelUp = FindObjectOfType<PowerLevelUp>();
-        levelManager = FindObjectOfType<LevelManager>();
     }
     private void Start()
     {
+        isPlayerDie = false;
         health = maxHealth;
         existTimeShield = powerShield.GetExistTime();
     }
@@ -78,6 +85,10 @@ public class Health : MonoBehaviour
                 damage.Hit();
             }
         }
+        if(collision.CompareTag("SonicBoom"))
+        {
+            Destroy(gameObject);
+        }
         if (isPlayer && collision.CompareTag("Power"))
         {
             CollectPower power = collision.GetComponent<CollectPower>();
@@ -113,17 +124,31 @@ public class Health : MonoBehaviour
     }
     private void Die()
     {
-        Destroy(gameObject);
         if(!isPlayer)
         {
+            Destroy(gameObject);
             GeneratePower power = FindObjectOfType<GeneratePower>();
             power.PowerGenerate(gameObject.transform.position);
             scoreKeeper.ModifyScore(score);
         }
         else
         {
-            levelManager.LoadGameOver();
+            isPlayerDie = true;
+            enemySpawn.enabled = false;
+            playerCollider.enabled = false;
+            StartCoroutine(WaitForDestroyPlayer());
         }
+    }
+    public bool GetPlayerDie()
+    {
+        return isPlayerDie;
+    }
+    private IEnumerator WaitForDestroyPlayer()
+    {
+        playerSprite.GetComponent<Animator>().enabled = true;
+        yield return new WaitForSeconds(dieAnimation.length);
+        sonicBoom.SetActive(true);
+        Destroy(gameObject);
     }
     private void ShakeCamera()
     {

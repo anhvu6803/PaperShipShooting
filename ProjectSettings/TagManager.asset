@@ -12,6 +12,7 @@ TagManager:
   - Bullet
   - Power
   - SonicBoom
+  - Laser
   layers:
   - Default
   - TransparentFX
@@ -72,4 +73,7 @@ TagManager:
     locked: 0
   - name: Danger
     uniqueID: 2610808257
+    locked: 0
+  - name: Laser
+    uniqueID: 3578953903
     locked: 0

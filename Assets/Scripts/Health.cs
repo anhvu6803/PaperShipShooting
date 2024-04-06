@@ -80,7 +80,7 @@ public class Health : MonoBehaviour
             TakeDamage(damage.GetDamage());
             ShakeCamera();
             PlayExplosionEffect();
-            if (!collision.CompareTag("Ultimate") && !collision.CompareTag("Laser"))
+            if (!collision.CompareTag("Ultimate") && !collision.CompareTag("Boss"))
             {
                 damage.Hit();
             }

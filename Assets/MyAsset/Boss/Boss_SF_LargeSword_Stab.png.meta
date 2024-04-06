@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cf376b7f386e52a45a905c9bfb182812
+guid: 811fd2a0bae6cdd479f6b960ff05a514
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,316 +123,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Laser_beam-Sheet_0
+      name: Boss_SF_LargeSword_Stab_0
       rect:
         serializedVersion: 2
-        x: 18
+        x: 0
         y: 0
-        width: 6
+        width: 64
         height: 128
-      alignment: 3
-      pivot: {x: 1, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed2821d53f08cfc458cd13937acdce93
-      internalID: 71608835
+      spriteID: 316afa50502788b46a414de49f3d1a1f
+      internalID: -1167317115
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Laser_beam-Sheet_1
+      name: Boss_SF_LargeSword_Stab_1
       rect:
         serializedVersion: 2
-        x: 58
+        x: 64
         y: 0
-        width: 7
+        width: 64
         height: 128
-      alignment: 3
-      pivot: {x: 1, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd756b1bee7529548a590aa9c7fbe596
-      internalID: 500282806
+      spriteID: d9110f44d91170a4b92f0a33e74ae62a
+      internalID: 614590269
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Laser_beam-Sheet_2
+      name: Boss_SF_LargeSword_Stab_2
       rect:
         serializedVersion: 2
-        x: 99
+        x: 128
         y: 0
-        width: 7
+        width: 64
         height: 128
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: feaa984dfbeffc848b120db41741001d
-      internalID: -954363723
+      spriteID: 6c5f3541a228dba49bd6df6ed36afb5f
+      internalID: -1233488076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Laser_beam-Sheet_3
+      name: Boss_SF_LargeSword_Stab_3
       rect:
         serializedVersion: 2
-        x: 136
+        x: 192
         y: 0
-        width: 15
+        width: 64
         height: 128
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 657e2f96e342f9642bd58edb39407860
-      internalID: -1501956935
+      spriteID: bd90ce4826098544f8cf631d64256859
+      internalID: 741918104
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Laser_beam-Sheet_4
+      name: Boss_SF_LargeSword_Stab_4
       rect:
         serializedVersion: 2
-        x: 175
+        x: 256
         y: 0
-        width: 19
+        width: 64
         height: 128
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bc5da9e984d82244a8dff6ccbf8bce7
-      internalID: -1428508583
+      spriteID: 00813f0f427fc624299d2830b5c3b105
+      internalID: 1003245525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Laser_beam-Sheet_5
+      name: Boss_SF_LargeSword_Stab_5
       rect:
         serializedVersion: 2
-        x: 205
+        x: 320
         y: 0
-        width: 41
+        width: 64
         height: 128
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60c99c733206e75489d3abb34635880f
-      internalID: 1006332089
+      spriteID: 5d16fb70c09a9e845962f5ee6a551bba
+      internalID: -2058277094
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Laser_beam-Sheet_6
+      name: Boss_SF_LargeSword_Stab_6
       rect:
         serializedVersion: 2
-        x: 246
+        x: 384
         y: 0
-        width: 41
+        width: 64
         height: 128
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d3db67960d9e4847aca99a74e94c98f
-      internalID: 534028673
+      spriteID: 28fb3417c83676846ba30df0202c835d
+      internalID: -372505206
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Laser_beam-Sheet_7
+      name: Boss_SF_LargeSword_Stab_7
       rect:
         serializedVersion: 2
-        x: 287
+        x: 448
         y: 0
-        width: 41
+        width: 64
         height: 128
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cdb632aa93fc3f40888ec21ad151b18
-      internalID: -1990619176
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Laser_beam-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 328
-        y: 0
-        width: 41
-        height: 128
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 323bbeb8e9f3986428202f3439678352
-      internalID: 1352315976
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Laser_beam-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 369
-        y: 0
-        width: 41
-        height: 128
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 284fc4eb41510404ca5f5ef04fc221eb
-      internalID: 783456038
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Laser_beam-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 421
-        y: 0
-        width: 19
-        height: 128
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b327b427b6eb8f34ca86e50a764cd084
-      internalID: 487384815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Laser_beam-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 464
-        y: 0
-        width: 15
-        height: 128
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ebec5bab658d62458d24b53275db18f
-      internalID: -944429942
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Laser_beam-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 509
-        y: 0
-        width: 7
-        height: 128
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74eb3502eda26d0478d69065a24592ab
-      internalID: -1221546140
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Laser_beam-Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 550
-        y: 0
-        width: 7
-        height: 128
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05fe4948e455a9746bed72196411c601
-      internalID: 1956005878
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Laser_beam-Sheet_14
-      rect:
-        serializedVersion: 2
-        x: 592
-        y: 0
-        width: 6
-        height: 128
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b4e689021a21d294495ab1f1756facc0
-      internalID: 656708557
+      spriteID: af8f38af7efc8d0438e2e4478aad1159
+      internalID: -438661502
       vertices: []
       indices: 
       edges: []
@@ -448,21 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Laser_beam-Sheet_0: 71608835
-      Laser_beam-Sheet_1: 500282806
-      Laser_beam-Sheet_10: 487384815
-      Laser_beam-Sheet_11: -944429942
-      Laser_beam-Sheet_12: -1221546140
-      Laser_beam-Sheet_13: 1956005878
-      Laser_beam-Sheet_14: 656708557
-      Laser_beam-Sheet_2: -954363723
-      Laser_beam-Sheet_3: -1501956935
-      Laser_beam-Sheet_4: -1428508583
-      Laser_beam-Sheet_5: 1006332089
-      Laser_beam-Sheet_6: 534028673
-      Laser_beam-Sheet_7: -1990619176
-      Laser_beam-Sheet_8: 1352315976
-      Laser_beam-Sheet_9: 783456038
+      Boss_SF_LargeSword_Stab_0: -1167317115
+      Boss_SF_LargeSword_Stab_1: 614590269
+      Boss_SF_LargeSword_Stab_2: -1233488076
+      Boss_SF_LargeSword_Stab_3: 741918104
+      Boss_SF_LargeSword_Stab_4: 1003245525
+      Boss_SF_LargeSword_Stab_5: -2058277094
+      Boss_SF_LargeSword_Stab_6: -372505206
+      Boss_SF_LargeSword_Stab_7: -438661502
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

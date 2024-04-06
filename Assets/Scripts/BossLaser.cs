@@ -57,6 +57,7 @@ public class BossLaser : MonoBehaviour
     {
         bossAnimator.SetBool("isUseLaser", true);
         yield return new WaitForSeconds(bossFire.length);
+        laserObject.transform.localScale = new Vector3(1, (transform.position.y - 0.35f + 5) / 1.3f, 1);
         laserObject.SetActive(true);
         laserAnimator.enabled = true;
         laserCollider.enabled = false;

@@ -14,6 +14,8 @@ TagManager:
   - SonicBoom
   - Boss
   - Laser
+  - SmallSword
+  - LargeSword
   layers:
   - Default
   - TransparentFX

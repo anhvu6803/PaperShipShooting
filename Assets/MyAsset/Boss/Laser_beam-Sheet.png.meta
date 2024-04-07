@@ -126,12 +126,12 @@ TextureImporter:
       name: Laser_beam-Sheet_0
       rect:
         serializedVersion: 2
-        x: 18
+        x: 0
         y: 0
-        width: 6
+        width: 41
         height: 128
-      alignment: 3
-      pivot: {x: 1, y: 1}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: Laser_beam-Sheet_1
       rect:
         serializedVersion: 2
-        x: 58
+        x: 41
         y: 0
-        width: 7
+        width: 41
         height: 128
-      alignment: 3
-      pivot: {x: 1, y: 1}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,9 +168,9 @@ TextureImporter:
       name: Laser_beam-Sheet_2
       rect:
         serializedVersion: 2
-        x: 99
+        x: 82
         y: 0
-        width: 7
+        width: 41
         height: 128
       alignment: 2
       pivot: {x: 0.5, y: 1}
@@ -189,9 +189,9 @@ TextureImporter:
       name: Laser_beam-Sheet_3
       rect:
         serializedVersion: 2
-        x: 136
+        x: 123
         y: 0
-        width: 15
+        width: 41
         height: 128
       alignment: 2
       pivot: {x: 0.5, y: 1}
@@ -210,9 +210,9 @@ TextureImporter:
       name: Laser_beam-Sheet_4
       rect:
         serializedVersion: 2
-        x: 175
+        x: 164
         y: 0
-        width: 19
+        width: 41
         height: 128
       alignment: 2
       pivot: {x: 0.5, y: 1}
@@ -336,9 +336,9 @@ TextureImporter:
       name: Laser_beam-Sheet_10
       rect:
         serializedVersion: 2
-        x: 421
+        x: 410
         y: 0
-        width: 19
+        width: 41
         height: 128
       alignment: 2
       pivot: {x: 0.5, y: 1}
@@ -357,9 +357,9 @@ TextureImporter:
       name: Laser_beam-Sheet_11
       rect:
         serializedVersion: 2
-        x: 464
+        x: 451
         y: 0
-        width: 15
+        width: 41
         height: 128
       alignment: 2
       pivot: {x: 0.5, y: 1}
@@ -378,9 +378,9 @@ TextureImporter:
       name: Laser_beam-Sheet_12
       rect:
         serializedVersion: 2
-        x: 509
+        x: 492
         y: 0
-        width: 7
+        width: 41
         height: 128
       alignment: 2
       pivot: {x: 0.5, y: 1}
@@ -399,9 +399,9 @@ TextureImporter:
       name: Laser_beam-Sheet_13
       rect:
         serializedVersion: 2
-        x: 550
+        x: 533
         y: 0
-        width: 7
+        width: 41
         height: 128
       alignment: 2
       pivot: {x: 0.5, y: 1}
@@ -420,9 +420,9 @@ TextureImporter:
       name: Laser_beam-Sheet_14
       rect:
         serializedVersion: 2
-        x: 592
+        x: 574
         y: 0
-        width: 6
+        width: 41
         height: 128
       alignment: 2
       pivot: {x: 0.5, y: 1}

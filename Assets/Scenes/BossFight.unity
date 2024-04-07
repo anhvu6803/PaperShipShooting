@@ -962,11 +962,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2135894008422822648, guid: 61524241069533d44add9aa368c802cf,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2288420345886478947, guid: 61524241069533d44add9aa368c802cf,
         type: 3}
       propertyPath: m_IsActive
@@ -974,54 +969,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3236160946282780870, guid: 61524241069533d44add9aa368c802cf,
         type: 3}
-      propertyPath: ls_CountDown
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3236160946282780870, guid: 61524241069533d44add9aa368c802cf,
-        type: 3}
-      propertyPath: leftLargeSword
-      value: 
-      objectReference: {fileID: 1312798833}
-    - target: {fileID: 3236160946282780870, guid: 61524241069533d44add9aa368c802cf,
-        type: 3}
-      propertyPath: ls_WaitingTime
-      value: 0.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 3236160946282780870, guid: 61524241069533d44add9aa368c802cf,
-        type: 3}
-      propertyPath: largeSwordSpawn
-      value: 
-      objectReference: {fileID: 240430993530238714, guid: f7a77a342114c5044897bf4c57f73182,
-        type: 3}
-    - target: {fileID: 3236160946282780870, guid: 61524241069533d44add9aa368c802cf,
-        type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 1924322231}
-    - target: {fileID: 3236160946282780870, guid: 61524241069533d44add9aa368c802cf,
+    - target: {fileID: 3951271581356752568, guid: 61524241069533d44add9aa368c802cf,
         type: 3}
-      propertyPath: rightLargeSword
+      propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1412446512}
-    - target: {fileID: 3236160946282780870, guid: 61524241069533d44add9aa368c802cf,
+      objectReference: {fileID: 71608835, guid: cf376b7f386e52a45a905c9bfb182812,
         type: 3}
-      propertyPath: ls_DelaySpawnTime
-      value: 1
+    - target: {fileID: 4275524466685606531, guid: 61524241069533d44add9aa368c802cf,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
       objectReference: {fileID: 0}
-    - target: {fileID: 4271200834602358735, guid: 61524241069533d44add9aa368c802cf,
+    - target: {fileID: 4275524466685606531, guid: 61524241069533d44add9aa368c802cf,
         type: 3}
-      propertyPath: score
-      value: 20000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4271200834602358735, guid: 61524241069533d44add9aa368c802cf,
-        type: 3}
-      propertyPath: isPlayer
-      value: 0
+      propertyPath: m_LocalScale.y
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4275524466685606531, guid: 61524241069533d44add9aa368c802cf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.56
       objectReference: {fileID: 0}
     - target: {fileID: 4275524466685606531, guid: 61524241069533d44add9aa368c802cf,
         type: 3}
@@ -1070,11 +1040,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4933022942798651086, guid: 61524241069533d44add9aa368c802cf,
         type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4933022942798651086, guid: 61524241069533d44add9aa368c802cf,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1083,13 +1048,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss_SwordFlower
       objectReference: {fileID: 0}
-    - target: {fileID: 9047044929140900628, guid: 61524241069533d44add9aa368c802cf,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 6612755483851521343, guid: 61524241069533d44add9aa368c802cf, type: 3}
+    - {fileID: 5074842860064977879, guid: 61524241069533d44add9aa368c802cf, type: 3}
+    - {fileID: 7044186452697561104, guid: 61524241069533d44add9aa368c802cf, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1799,23 +1760,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1312798833 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8601840848273434085, guid: 61524241069533d44add9aa368c802cf,
-    type: 3}
-  m_PrefabInstance: {fileID: 361833236}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1346270737 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4255525982089256451, guid: 6cae664cf9ac7e64fbfc216ded530b63,
     type: 3}
   m_PrefabInstance: {fileID: 1502870173}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1412446512 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4360881151869494450, guid: 61524241069533d44add9aa368c802cf,
-    type: 3}
-  m_PrefabInstance: {fileID: 361833236}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1417192751
 GameObject:

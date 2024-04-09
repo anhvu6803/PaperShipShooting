@@ -16,6 +16,7 @@ TagManager:
   - Laser
   - SmallSword
   - LargeSword
+  - FlowerShoot
   layers:
   - Default
   - TransparentFX

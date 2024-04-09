@@ -8,16 +8,16 @@ public class Health : MonoBehaviour
     [SerializeField] private float health;
     [SerializeField] private float maxHealth;
     [SerializeField] private int score;
+    [SerializeField] private ParticleSystem explosionEffect;
+    [SerializeField] private AnimationClip dieAnimation;
+    [SerializeField] private Animator animator;
+    [SerializeField] private Collider2D objectCollider;
     [Header("Player")]
     [SerializeField] private bool isPlayer;
     [SerializeField] private bool hasShield;
     [SerializeField] private bool isApplyCameraShake;
-    [SerializeField] private ParticleSystem explosionEffect;
-    [SerializeField] private AnimationClip dieAnimation;
-    [SerializeField] private GameObject playerSprite;
     [SerializeField] private GameObject sonicBoom;
     [SerializeField] private EnemySpawner enemySpawn;
-    [SerializeField] private CircleCollider2D playerCollider;
     private ScoreKeeper scoreKeeper;
     private CameraShake shake;
     private StorePower storePower;
@@ -124,9 +124,13 @@ public class Health : MonoBehaviour
     }
     private void Die()
     {
-        if(!isPlayer)
+        if (objectCollider != null)
         {
-            Destroy(gameObject);
+            objectCollider.enabled = false;
+        }
+        if (!isPlayer)
+        {
+            StartCoroutine(WaitForDestroyObject());
             GeneratePower power = FindObjectOfType<GeneratePower>();
             power.PowerGenerate(gameObject.transform.position);
             scoreKeeper.ModifyScore(score);
@@ -134,21 +138,42 @@ public class Health : MonoBehaviour
         else
         {
             isPlayerDie = true;
-            enemySpawn.enabled = false;
-            playerCollider.enabled = false;
-            StartCoroutine(WaitForDestroyPlayer());
+            if (enemySpawn != null)
+            {
+                enemySpawn.enabled = false;
+            }
+            StartCoroutine(WaitForDestroyObject());
         }
     }
     public bool GetPlayerDie()
     {
         return isPlayerDie;
     }
-    private IEnumerator WaitForDestroyPlayer()
+    private IEnumerator WaitForDestroyObject()
     {
-        playerSprite.GetComponent<Animator>().enabled = true;
-        yield return new WaitForSeconds(dieAnimation.length);
-        sonicBoom.SetActive(true);
-        Destroy(gameObject);
+        if (animator != null)
+        {
+            animator.enabled = true;
+            if (gameObject.CompareTag("FlowerShoot"))
+            {
+                animator.SetBool("isBreak", true);
+            }
+        }
+        float waitingTime = dieAnimation != null ? dieAnimation.length : 0;
+        yield return new WaitForSeconds(waitingTime);
+        if (isPlayer)
+        {
+            sonicBoom.SetActive(true);
+        }
+        if (gameObject.CompareTag("FlowerShoot"))
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
     }
     private void ShakeCamera()
     {

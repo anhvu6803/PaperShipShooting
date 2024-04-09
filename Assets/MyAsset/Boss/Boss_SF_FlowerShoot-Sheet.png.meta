@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 590755eea3f4bf449a51e10d1daa71eb
+guid: fc89650c77a464f45a521f6065d29885
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -108,7 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: 47
     textureCompression: 1
@@ -123,589 +123,547 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_0
+      name: Boss_SF_FlowerShoot-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 50
         y: 0
         width: 100
-        height: 70
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f5b6e23700952d47b3f22a7802470bb
-      internalID: -568558728
+      spriteID: 577eec5822f0a724ea33b9169cab0a43
+      internalID: 897801228
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_1
+      name: Boss_SF_FlowerShoot-Sheet_1
       rect:
         serializedVersion: 2
-        x: 100
+        x: 250
         y: 0
         width: 100
-        height: 70
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8270edef1bdc1843be0cbd4c5932ead
-      internalID: -1913691726
+      spriteID: 55d7cb3879032504ba202884743a7ba3
+      internalID: 67090470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_2
+      name: Boss_SF_FlowerShoot-Sheet_2
       rect:
         serializedVersion: 2
-        x: 200
+        x: 450
         y: 0
         width: 100
-        height: 70
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe72a1e40ac261e4493e948b09cb3e12
-      internalID: -962927225
+      spriteID: e7efd066479858e4bb7c6d922016eeb0
+      internalID: 566995103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_3
+      name: Boss_SF_FlowerShoot-Sheet_3
       rect:
         serializedVersion: 2
-        x: 300
+        x: 650
         y: 0
         width: 100
-        height: 70
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62c1b3847f1fc38439115a5e42249b8c
-      internalID: -1220950150
+      spriteID: 267fc0595239ba3439325f67090548fc
+      internalID: -1537637168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_4
+      name: Boss_SF_FlowerShoot-Sheet_4
       rect:
         serializedVersion: 2
-        x: 400
+        x: 850
         y: 0
         width: 100
-        height: 70
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5112bb3cb5754e418a992a7b2cdcdac
-      internalID: -2012473967
+      spriteID: 0571f4e814ff27940b4a50ead9d22844
+      internalID: 61296468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_5
+      name: Boss_SF_FlowerShoot-Sheet_5
       rect:
         serializedVersion: 2
-        x: 500
+        x: 1050
         y: 0
         width: 100
-        height: 70
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f123e23a003371458f37e214d15b4f0
-      internalID: 1658906556
+      spriteID: 205ff2eb02733aa4a94fb647e887f6cc
+      internalID: -48087610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_6
+      name: Boss_SF_FlowerShoot-Sheet_6
       rect:
         serializedVersion: 2
-        x: 600
+        x: 1250
         y: 0
         width: 100
-        height: 70
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c20a1c3b3c1e024aacf7de52e97821c
-      internalID: -13097300
+      spriteID: 00162182a3fb9ad41a160863b777dafe
+      internalID: 991563212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_7
+      name: Boss_SF_FlowerShoot-Sheet_7
       rect:
         serializedVersion: 2
-        x: 700
+        x: 1450
         y: 0
         width: 100
-        height: 70
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 431d1f5f69d59f24888e550ac5eceb6f
-      internalID: -1058006458
+      spriteID: 277c9d04c4361634882b9ff0c5d07d74
+      internalID: -978976558
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_8
+      name: Boss_SF_FlowerShoot-Sheet_8
       rect:
         serializedVersion: 2
-        x: 800
+        x: 1650
         y: 0
         width: 100
-        height: 70
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba23fc9f6c6fe4144b10f7d7ea773c0c
-      internalID: -582280125
+      spriteID: e10df5a4feb075b41b634889ee7d44db
+      internalID: -496178182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_9
+      name: Boss_SF_FlowerShoot-Sheet_9
       rect:
         serializedVersion: 2
-        x: 900
+        x: 1799
         y: 0
-        width: 100
-        height: 70
+        width: 200
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 168d041b1ca2f8f4484cc298aeb964bb
-      internalID: 543208242
+      spriteID: 15da9e7458e443a48ae0cfc2f7866415
+      internalID: -432280017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 100
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5382c4e1243e3ba45b8eab56f047e4a7
-      internalID: 112338293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 1100
-        y: 0
-        width: 100
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 287b25841ea8a3445957dc8436b3f7ae
-      internalID: 351601985
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 0
-        width: 100
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56b4d103ef87333458cad1263b042802
-      internalID: -1366984339
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 1300
-        y: 0
-        width: 100
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e1d7713d07f6334295fa9f74a080f77
-      internalID: 1809219442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_14
-      rect:
-        serializedVersion: 2
-        x: 1400
-        y: 0
-        width: 100
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f60ef46dfe5cd64fbdc1413c1bb13c1
-      internalID: -212980635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_15
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 0
-        width: 100
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5af61fdd742b88148a047463542acef9
-      internalID: 200815179
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_16
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 0
-        width: 100
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cddc12d7aced57547988988a51ffbcba
-      internalID: -1221211280
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_17
-      rect:
-        serializedVersion: 2
-        x: 1700
-        y: 0
-        width: 100
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0214bfc14085b94e91d067091934895
-      internalID: 1564414151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_18
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 0
-        width: 100
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: acb085ded1b56d24398eef449fb84446
-      internalID: -1152964551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_19
-      rect:
-        serializedVersion: 2
-        x: 1900
-        y: 0
-        width: 100
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a464c5e3bc143d4aabf5113bf029f5d
-      internalID: 49687948
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_20
+      name: Boss_SF_FlowerShoot-Sheet_10
       rect:
         serializedVersion: 2
         x: 2000
         y: 0
-        width: 100
-        height: 70
+        width: 200
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8876197ef3b41844bedf94eac9c85a4
-      internalID: 679116070
+      spriteID: 40683e69a6d9751429df421b86c99d48
+      internalID: -919102164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_21
-      rect:
-        serializedVersion: 2
-        x: 2100
-        y: 0
-        width: 100
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de8fc69f3547ccb40b2d60d78527e5a0
-      internalID: -1017067422
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_22
+      name: Boss_SF_FlowerShoot-Sheet_11
       rect:
         serializedVersion: 2
         x: 2200
         y: 0
-        width: 100
-        height: 70
+        width: 200
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68ce93fcc72c87946a79030f148b4823
-      internalID: 1244178685
+      spriteID: d5fd8753b2af7a64faf16c6e780f0a60
+      internalID: -1761759610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_23
+      name: Boss_SF_FlowerShoot-Sheet_12
       rect:
         serializedVersion: 2
-        x: 2300
+        x: 2472
         y: 0
-        width: 100
-        height: 70
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9246f4920fc48d84eacc0197fb42558d
-      internalID: 700103420
+      spriteID: 0d8e14e316b5f3948b067377e6dbcfff
+      internalID: -9737041
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_24
+      name: Boss_SF_FlowerShoot-Sheet_13
       rect:
         serializedVersion: 2
-        x: 2400
+        x: 2672
         y: 0
-        width: 100
-        height: 70
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc267443edb253f4183827c141c18350
-      internalID: 1906980664
+      spriteID: 826c595a482d3c14a9cec71ca02cf270
+      internalID: 77866180
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_25
+      name: Boss_SF_FlowerShoot-Sheet_14
       rect:
         serializedVersion: 2
-        x: 2500
+        x: 2872
         y: 0
-        width: 100
-        height: 70
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d371154646aadaf438b032711b7d4aff
-      internalID: 1355485603
+      spriteID: 6fb1bf8ebe738e84da67abac6b28e603
+      internalID: 1640350010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_26
+      name: Boss_SF_FlowerShoot-Sheet_15
       rect:
         serializedVersion: 2
-        x: 2600
+        x: 3072
         y: 0
-        width: 100
-        height: 70
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8d702b72ccf4c549b4ce2728d2e46d2
-      internalID: 1759604093
+      spriteID: e6c3c6f3754a4d84a9d05aa5d62aa05a
+      internalID: 287778566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_SwordFlower-Sheet_27
+      name: Boss_SF_FlowerShoot-Sheet_16
       rect:
         serializedVersion: 2
-        x: 2700
+        x: 3272
         y: 0
-        width: 100
-        height: 70
+        width: 64
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4209578cf5e297044b206c831bb8da57
-      internalID: -2113406258
+      spriteID: 2d6b73177b62d514f9168d033b834fcd
+      internalID: 492249757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_SF_FlowerShoot-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 3472
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c053663fc4f5604c9cb68a88703bd05
+      internalID: 1795180625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_SF_FlowerShoot-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 3672
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e6c09912c3d474aa1313eb237ca934
+      internalID: -1002176867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_SF_FlowerShoot-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 3872
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27e39d9d34907624fa11d886c72996ba
+      internalID: -1633090962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_SF_FlowerShoot-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 4072
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0427f35656d72054cbc424e42422bba9
+      internalID: -76925445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_SF_FlowerShoot-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 4272
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d95841a67c3a64aa89cc1554c33ad2
+      internalID: -91630797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_SF_FlowerShoot-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 4472
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d79c8bc3bec5a6e499005ce7f0d26031
+      internalID: -1167299208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_SF_FlowerShoot-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 4672
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ccb9a75a34e012469bc8149e626fa98
+      internalID: 635914683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_SF_FlowerShoot-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 4872
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 612b9198273d5f144b6e4bf1db9450d4
+      internalID: -472822891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_SF_FlowerShoot-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 5072
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a1770b35a74c54e9be1c4fd03951b0
+      internalID: 1469639630
       vertices: []
       indices: 
       edges: []
@@ -721,34 +679,32 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Boss_SwordFlower-Sheet_0: -568558728
-      Boss_SwordFlower-Sheet_1: -1913691726
-      Boss_SwordFlower-Sheet_10: 112338293
-      Boss_SwordFlower-Sheet_11: 351601985
-      Boss_SwordFlower-Sheet_12: -1366984339
-      Boss_SwordFlower-Sheet_13: 1809219442
-      Boss_SwordFlower-Sheet_14: -212980635
-      Boss_SwordFlower-Sheet_15: 200815179
-      Boss_SwordFlower-Sheet_16: -1221211280
-      Boss_SwordFlower-Sheet_17: 1564414151
-      Boss_SwordFlower-Sheet_18: -1152964551
-      Boss_SwordFlower-Sheet_19: 49687948
-      Boss_SwordFlower-Sheet_2: -962927225
-      Boss_SwordFlower-Sheet_20: 679116070
-      Boss_SwordFlower-Sheet_21: -1017067422
-      Boss_SwordFlower-Sheet_22: 1244178685
-      Boss_SwordFlower-Sheet_23: 700103420
-      Boss_SwordFlower-Sheet_24: 1906980664
-      Boss_SwordFlower-Sheet_25: 1355485603
-      Boss_SwordFlower-Sheet_26: 1759604093
-      Boss_SwordFlower-Sheet_27: -2113406258
-      Boss_SwordFlower-Sheet_3: -1220950150
-      Boss_SwordFlower-Sheet_4: -2012473967
-      Boss_SwordFlower-Sheet_5: 1658906556
-      Boss_SwordFlower-Sheet_6: -13097300
-      Boss_SwordFlower-Sheet_7: -1058006458
-      Boss_SwordFlower-Sheet_8: -582280125
-      Boss_SwordFlower-Sheet_9: 543208242
+      Boss_SF_FlowerShoot-Sheet_0: 897801228
+      Boss_SF_FlowerShoot-Sheet_1: 67090470
+      Boss_SF_FlowerShoot-Sheet_10: -919102164
+      Boss_SF_FlowerShoot-Sheet_11: -1761759610
+      Boss_SF_FlowerShoot-Sheet_12: -9737041
+      Boss_SF_FlowerShoot-Sheet_13: 77866180
+      Boss_SF_FlowerShoot-Sheet_14: 1640350010
+      Boss_SF_FlowerShoot-Sheet_15: 287778566
+      Boss_SF_FlowerShoot-Sheet_16: 492249757
+      Boss_SF_FlowerShoot-Sheet_17: 1795180625
+      Boss_SF_FlowerShoot-Sheet_18: -1002176867
+      Boss_SF_FlowerShoot-Sheet_19: -1633090962
+      Boss_SF_FlowerShoot-Sheet_2: 566995103
+      Boss_SF_FlowerShoot-Sheet_20: -76925445
+      Boss_SF_FlowerShoot-Sheet_21: -91630797
+      Boss_SF_FlowerShoot-Sheet_22: -1167299208
+      Boss_SF_FlowerShoot-Sheet_23: 635914683
+      Boss_SF_FlowerShoot-Sheet_24: -472822891
+      Boss_SF_FlowerShoot-Sheet_25: 1469639630
+      Boss_SF_FlowerShoot-Sheet_3: -1537637168
+      Boss_SF_FlowerShoot-Sheet_4: 61296468
+      Boss_SF_FlowerShoot-Sheet_5: -48087610
+      Boss_SF_FlowerShoot-Sheet_6: 991563212
+      Boss_SF_FlowerShoot-Sheet_7: -978976558
+      Boss_SF_FlowerShoot-Sheet_8: -496178182
+      Boss_SF_FlowerShoot-Sheet_9: -432280017
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

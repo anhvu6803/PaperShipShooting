@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 1626930993}
   - component: {fileID: 1626930994}
   - component: {fileID: 8713353325622490799}
+  - component: {fileID: 6669332141341083575}
   m_Layer: 6
   m_Name: BreakingShield_0
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,6 +143,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6669332141341083575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626930991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8faf7463a95892419d805c74819a217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionEffect: {fileID: 4267178648959492308, guid: ccb981d1295c2d14e97ba00ea43eede4,
+    type: 3}
+  powerShield: {fileID: 0}
 --- !u!1 &296887132503241185
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,12 +232,12 @@ SpriteRenderer:
   m_SortingLayerID: 1363869057
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1017227626, guid: d4fc5ae7d0b962543a606bd115834267, type: 3}
+  m_Sprite: {fileID: -90116349, guid: 10f238328983cd24d869ff58fad58e21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.8, y: 0.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -235,7 +251,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296887132503241185}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8a90047183b3c84459a16bcfd6196b27, type: 2}
   m_CullingMode: 0
@@ -371,7 +387,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2481103806163531911}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 738b58db3c005e34e833af1d0a09267f, type: 3}
   m_Name: 
@@ -386,6 +402,7 @@ MonoBehaviour:
   isFiring: 0
   isShooting: 0
   isPlayer: 1
+  health: {fileID: 1344776242480694563}
 --- !u!114 &1344776242480694563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,15 +418,15 @@ MonoBehaviour:
   health: 200
   maxHealth: 200
   score: 0
-  isPlayer: 1
-  hasShield: 0
-  isApplyCameraShake: 1
   explosionEffect: {fileID: 4267178648959492308, guid: ccb981d1295c2d14e97ba00ea43eede4,
     type: 3}
-  dieAnimation: {fileID: 7400000, guid: 6129dddaab5e2f44dbc7a44469aba846, type: 2}
-  playerSprite: {fileID: 296887132503241185}
+  dieAnimation: {fileID: 7400000, guid: 7dbf4c30301682e4a9c3a5cd77836ef7, type: 2}
+  animator: {fileID: 3307901971244177180}
+  objectCollider: {fileID: -9204159233906080911}
+  hasShield: 0
+  isPlayer: 1
+  isApplyCameraShake: 1
   sonicBoom: {fileID: 0}
-  sonicBoomExistTime: 0
   enemySpawn: {fileID: 0}
 --- !u!114 &5588949438794045101
 MonoBehaviour:

@@ -12,44 +12,28 @@ public class Health : MonoBehaviour
     [SerializeField] private AnimationClip dieAnimation;
     [SerializeField] private Animator animator;
     [SerializeField] private Collider2D objectCollider;
+    [SerializeField] private bool hasShield;
     [Header("Player")]
     [SerializeField] private bool isPlayer;
-    [SerializeField] private bool hasShield;
     [SerializeField] private bool isApplyCameraShake;
     [SerializeField] private GameObject sonicBoom;
     [SerializeField] private EnemySpawner enemySpawn;
     private ScoreKeeper scoreKeeper;
     private CameraShake shake;
     private StorePower storePower;
-    private PowerShield powerShield;
     private PowerLevelUp powerLevelUp;
-    private float existTimeShield;
     private bool isPlayerDie;
     private void Awake()
     {
         shake = FindObjectOfType<CameraShake>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
         storePower = FindObjectOfType<StorePower>();
-        powerShield = FindObjectOfType<PowerShield>();
         powerLevelUp = FindObjectOfType<PowerLevelUp>();
     }
     private void Start()
     {
         isPlayerDie = false;
         health = maxHealth;
-        existTimeShield = powerShield.GetExistTime();
-    }
-    private void Update()
-    {
-        if (hasShield)
-        {
-            existTimeShield -= Time.deltaTime;
-            if(existTimeShield <= 0)
-            {
-                powerShield.TakeDamageShield(powerShield.GetMaxHealth());
-                existTimeShield = powerShield.GetExistTime();                
-            }
-        }
     }
     public float GetHealth()
     {
@@ -68,17 +52,12 @@ public class Health : MonoBehaviour
     {
         health += recovery;
     }
-    public void SetHasShield(bool boolean)
-    {
-        hasShield = boolean;
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         DamageDealer damage = collision.GetComponent<DamageDealer>();
         if(damage != null)
         {
             TakeDamage(damage.GetDamage());
-            ShakeCamera();
             PlayExplosionEffect();
             if (!collision.CompareTag("Ultimate") && !collision.CompareTag("Boss"))
             {
@@ -109,18 +88,19 @@ public class Health : MonoBehaviour
     }
     private void TakeDamage(int damage)
     {
-        if (hasShield)
-        {
-            powerShield.TakeDamageShield(damage);
-        }
-        else
+        if (!hasShield)
         {
             health -= damage;
+            ShakeCamera();
         }
         if(health <= 0)
         {
             Die();
         }
+    }
+    public void SetHasShield(bool boolean)
+    {
+        hasShield = boolean;
     }
     private void Die()
     {
@@ -154,20 +134,12 @@ public class Health : MonoBehaviour
         if (animator != null)
         {
             animator.enabled = true;
-            if (gameObject.CompareTag("FlowerShoot"))
-            {
-                animator.SetBool("isBreak", true);
-            }
         }
         float waitingTime = dieAnimation != null ? dieAnimation.length : 0;
         yield return new WaitForSeconds(waitingTime);
         if (isPlayer)
         {
             sonicBoom.SetActive(true);
-        }
-        if (gameObject.CompareTag("FlowerShoot"))
-        {
-            gameObject.SetActive(false);
         }
         else
         {

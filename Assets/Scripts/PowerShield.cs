@@ -5,16 +5,21 @@ using UnityEngine;
 public class PowerShield : MonoBehaviour
 {
     [SerializeField] private GameObject shield;
-    [SerializeField] private Sprite shildSprite;
+    [SerializeField] private Sprite shieldSprite;
     [SerializeField] private int maxHealth;
     [SerializeField] private AnimationClip breakShield;
-    [SerializeField] private Health playerHealth;
     [SerializeField] private float existTime;
+    [SerializeField] private Health healthObject;
+    private Animator animator;
     private int health;
     private StorePower storePower;
     private void Awake()
     {
         storePower = FindObjectOfType<StorePower>();
+    }
+    private void Start()
+    {
+        animator = shield.GetComponent<Animator>();
     }
     public float GetExistTime()
     {
@@ -34,18 +39,20 @@ public class PowerShield : MonoBehaviour
     }
     public void UseShield()
     {
-        playerHealth.SetHasShield(true);
+        healthObject.SetHasShield(true);    
         shield.SetActive(true);
-        shield.GetComponent<SpriteRenderer>().sprite = shildSprite;
+        shield.GetComponent<SpriteRenderer>().sprite = shieldSprite;
         health = maxHealth;
         storePower.DecreaseShieldCount();
+        animator.enabled = true;
     }
     private IEnumerator BreakShield()
     {
-        shield.GetComponent<Animator>().enabled = true;
-        playerHealth.SetHasShield(false);
+        healthObject.SetHasShield(false);
+        animator.SetBool("isBreak", true);
         yield return new WaitForSeconds(breakShield.length);
         shield.SetActive(false);
-        shield.GetComponent<Animator>().enabled = false;
+        animator.SetBool("isBreak", false);
+        animator.enabled = false;
     }
 }

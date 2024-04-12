@@ -48,9 +48,12 @@ public class BossShoot : MonoBehaviour
     }
     private IEnumerator SpawnShoot()
     {
-        foreach(Transform t in points)
-        { 
-            if(t.position.x > 0)
+        PowerShield powerShield = flowerBloom.GetComponent<PowerShield>();
+        powerShield.UseShield();
+        yield return new WaitForSeconds(powerShield.GetExistTime());
+        foreach (Transform t in points)
+        {
+            if (t.position.x > 0)
             {
                 angleY = 180;
             }
@@ -58,7 +61,8 @@ public class BossShoot : MonoBehaviour
             {
                 angleY = 0;
             }
-            Instantiate(flowerSword, t.position, Quaternion.Euler(0, angleY, 0));
+            GameObject instance = Instantiate(flowerSword, t.position, Quaternion.Euler(0, angleY, 0));
+            instance.SetActive(true);
             yield return new WaitForSeconds(delaySpawnTime);
         }
         countDownTemp = countDown;

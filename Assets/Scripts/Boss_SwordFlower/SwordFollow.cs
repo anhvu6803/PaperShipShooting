@@ -4,15 +4,42 @@ using UnityEngine;
 
 public class SwordFollow : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float speedRotation;
+    [SerializeField] private float speedFollow;
+    [SerializeField] private Transform playerTransform;
+    [SerializeField] private float waitingTime;
+    private Rigidbody2D rb;
+    private Vector2 moveDirection;
+    private float angleY;
+    private float sign;
+    private void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        if (transform.position.x > 0)
+        {
+            angleY = 180;
+            sign = 1;
+        }
+        else
+        {
+            sign = -1;
+            angleY = 0;
+        }
+        moveDirection = (playerTransform.position - transform.position).normalized;
+        RotateToFacePlayer();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        waitingTime -= Time.deltaTime;
+        if(waitingTime <= 0)
+        {
+            rb.velocity = moveDirection * speedFollow * Time.deltaTime;
+        }
+    }
+    private void RotateToFacePlayer()
+    {
+        float angle = Mathf.Atan2(Mathf.Abs(moveDirection.y), Mathf.Abs(moveDirection.x)) * Mathf.Rad2Deg;
+        Quaternion targetRotation = Quaternion.Euler(new Vector3(0, angleY, sign * (90 - angle) * Mathf.Sign(transform.position.x)));
+        transform.rotation = targetRotation;
     }
 }

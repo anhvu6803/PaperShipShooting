@@ -640,12 +640,12 @@ PrefabInstance:
     - target: {fileID: 2481103806163531904, guid: 6cae664cf9ac7e64fbfc216ded530b63,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.04
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 2481103806163531904, guid: 6cae664cf9ac7e64fbfc216ded530b63,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 2481103806163531904, guid: 6cae664cf9ac7e64fbfc216ded530b63,
         type: 3}
@@ -692,11 +692,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3012593761348307962, guid: 6cae664cf9ac7e64fbfc216ded530b63,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6669332141341083575, guid: 6cae664cf9ac7e64fbfc216ded530b63,
         type: 3}
       propertyPath: powerShield
       value: 
       objectReference: {fileID: 256130235}
+    - target: {fileID: 8555559249343940042, guid: 6cae664cf9ac7e64fbfc216ded530b63,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8555559249343940042, guid: 6cae664cf9ac7e64fbfc216ded530b63,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

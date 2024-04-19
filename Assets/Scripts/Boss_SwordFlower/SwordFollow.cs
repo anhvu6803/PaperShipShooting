@@ -26,6 +26,7 @@ public class SwordFollow : MonoBehaviour
             angleY = 0;
         }
         moveDirection = (playerTransform.position - transform.position).normalized;
+        Debug.Log(moveDirection);
         RotateToFacePlayer();
     }
     private void Update()
@@ -38,8 +39,9 @@ public class SwordFollow : MonoBehaviour
     }
     private void RotateToFacePlayer()
     {
-        float angle = Mathf.Atan2(Mathf.Abs(moveDirection.y), Mathf.Abs(moveDirection.x)) * Mathf.Rad2Deg;
-        Quaternion targetRotation = Quaternion.Euler(new Vector3(0, angleY, sign * (90 - angle) * Mathf.Sign(transform.position.x)));
+        float angle = Mathf.Atan(moveDirection.y / moveDirection.x) * Mathf.Rad2Deg;
+        Debug.Log(angle);
+        Quaternion targetRotation = Quaternion.Euler(new Vector3(0, angleY, 90 - Mathf.Abs(angle)));
         transform.rotation = targetRotation;
-    }
+    } 
 }

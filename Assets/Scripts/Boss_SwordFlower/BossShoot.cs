@@ -9,13 +9,16 @@ public class BossShoot : MonoBehaviour
     [SerializeField] private GameObject flowerSword;
     [SerializeField] private float delaySpawnTime;
     [SerializeField] private float countDown;
+    [SerializeField] private Transform bossContainer;
     private float countDownTemp;
     private List<Transform> points = new List<Transform>();
     private float angleY;
     private bool isShoot;
     private Coroutine shootCoroutine;
+    private BossLaser bossLaser;
     private void Start()
     {
+        bossLaser = gameObject.GetComponent<BossLaser>();
         foreach (Transform t in pointSpawn.transform)
         {
             points.Add(t);
@@ -28,7 +31,7 @@ public class BossShoot : MonoBehaviour
             countDownTemp -= Time.deltaTime;
             isShoot = false;
         }
-        else
+        else if(!bossLaser.GetLaserFiring())
         {
             isShoot = true;
         }
@@ -61,7 +64,7 @@ public class BossShoot : MonoBehaviour
             {
                 angleY = 0;
             }
-            GameObject instance = Instantiate(flowerSword, t.position, Quaternion.Euler(0, angleY, 0));
+            GameObject instance = Instantiate(flowerSword, t.position, Quaternion.Euler(0, angleY, 0), bossContainer);
             instance.SetActive(true);
             yield return new WaitForSeconds(delaySpawnTime);
         }

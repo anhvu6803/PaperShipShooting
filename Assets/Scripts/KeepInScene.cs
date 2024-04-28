@@ -25,6 +25,14 @@ public class KeepInScene : MonoBehaviour
         minBound = mainCamera.ViewportToWorldPoint(new Vector2(0, 0));
         maxBound = mainCamera.ViewportToWorldPoint(new Vector2(1, 1));
     }
+    public Vector2 GetMinBound()
+    {
+        return new Vector2(minBound.x + paddingLeft, minBound.y + paddingBottom);
+    }
+    public Vector2 GetMaxBound()
+    {
+        return new Vector2(maxBound.x - paddingRight, maxBound.y - paddingTop);
+    }
     private void KeepingInScreen()
     {
         Vector2 newPostion;

@@ -6,6 +6,7 @@ public class HitShield : MonoBehaviour
 {
     [SerializeField] private ParticleSystem explosionEffect;
     [SerializeField] private PowerShield powerShield;
+    [SerializeField] private bool isDontBreak;
     private float existTimeShield;
     private void Start()
     {
@@ -13,6 +14,8 @@ public class HitShield : MonoBehaviour
     }
     private void Update()
     {
+        if (isDontBreak) return;
+
         existTimeShield -= Time.deltaTime;
         if (existTimeShield <= 0)
         {
@@ -25,19 +28,22 @@ public class HitShield : MonoBehaviour
         DamageDealer damage = collision.GetComponent<DamageDealer>();
         if (damage != null)
         {
-            powerShield.TakeDamageShield(damage.GetDamage());
-            PlayExplosionEffect();
-            if (!collision.CompareTag("Ultimate") && !collision.CompareTag("Boss"))
+            if (!isDontBreak)
+            {
+                powerShield.TakeDamageShield(damage.GetDamage());
+            }
+            PlayExplosionEffect(collision.transform.position);
+            if (!collision.CompareTag("Ultimate") && !collision.CompareTag("Boss") && !collision.CompareTag("BossShield"))
             {
                 damage.Hit();
             }
         }
     }
-    private void PlayExplosionEffect()
+    private void PlayExplosionEffect(Vector2 colliderPosition)
     {
         if (explosionEffect != null)
         {
-            ParticleSystem instance = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            ParticleSystem instance = Instantiate(explosionEffect, colliderPosition, Quaternion.identity);
             Destroy(instance.gameObject, instance.main.duration + instance.main.startLifetime.constantMax);
         }
     }

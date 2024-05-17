@@ -8,6 +8,7 @@ public class BossLaser : MonoBehaviour
     [SerializeField] private bool isCanFire;
     [SerializeField] private float countDown;
     [SerializeField] private Transform swordContainer;
+    [SerializeField] private GameObject bossContainer;
     private BossMove bossMove;
     private float countDownTemp;
     private Coroutine bossFireCoroutine;
@@ -42,7 +43,10 @@ public class BossLaser : MonoBehaviour
         {
             isCanFire = true;
         }
-        BossFiringManager();
+        if (bossContainer.activeSelf)
+        {
+            BossFiringManager();
+        }
     }
     public bool GetLaserFiring()
     {
@@ -78,12 +82,12 @@ public class BossLaser : MonoBehaviour
         bossAnimator.SetBool("isEndFire", true);
         laserObject.SetActive(false);
         laserAnimator.enabled = false;
-        countDownTemp = countDown;
-        bossMove.SetCountDownTeleport(countDown);
         yield return new WaitForSeconds(bossEndFire.length);
         bossAnimator.SetBool("isEndFire", false);
         yield return new WaitForSeconds(bossLockFire.length);
         bossAnimator.SetBool("isUseLaser", false);
-       
+        countDownTemp = countDown;
+        bossMove.SetCountDownTeleport(countDown);
+        bossMove.SetReturnBoss(true);
     }
 }

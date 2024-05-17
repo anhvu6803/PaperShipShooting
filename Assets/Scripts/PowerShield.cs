@@ -11,7 +11,7 @@ public class PowerShield : MonoBehaviour
     [SerializeField] private float existTime;
     [SerializeField] private Health healthObject;
     private Animator animator;
-    private int health;
+    [SerializeField] private int health;
     private StorePower storePower;
     private void Awake()
     {
@@ -43,7 +43,10 @@ public class PowerShield : MonoBehaviour
         shield.SetActive(true);
         shield.GetComponent<SpriteRenderer>().sprite = shieldSprite;
         health = maxHealth;
-        storePower.DecreaseShieldCount();
+        if (storePower != null)
+        {
+            storePower.DecreaseShieldCount();
+        }
         animator.enabled = true;
     }
     private IEnumerator BreakShield()

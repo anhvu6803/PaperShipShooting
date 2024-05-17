@@ -18,20 +18,13 @@ MonoBehaviour:
   - {fileID: 6576739815258107264, guid: aed6cf25b7926154aacf27338a8d8ee0, type: 3}
   - {fileID: 6576739815258107264, guid: aed6cf25b7926154aacf27338a8d8ee0, type: 3}
   - {fileID: 6576739815258107264, guid: aed6cf25b7926154aacf27338a8d8ee0, type: 3}
-  - {fileID: 6576739815258107264, guid: aed6cf25b7926154aacf27338a8d8ee0, type: 3}
-  - {fileID: 6576739815258107264, guid: aed6cf25b7926154aacf27338a8d8ee0, type: 3}
-  - {fileID: 6576739815258107264, guid: aed6cf25b7926154aacf27338a8d8ee0, type: 3}
   pathWay:
   - {fileID: 1027580827948819482, guid: 442432da340a9f542b7360bbdbb60dd1, type: 3}
   - {fileID: 7149043633716967083, guid: 71513ce1cb4758549b481e6dd151fc2c, type: 3}
   - {fileID: 7952526001336354276, guid: e7b4a91532aa0cf499a3d0d0a88c3d55, type: 3}
-  - {fileID: 3660866913850110683, guid: de8e99bc886d512419de60e4d0e73438, type: 3}
-  - {fileID: 5601567414545148229, guid: be2140b9fc186f74c81509c6c0f550e4, type: 3}
-  - {fileID: 267124493107643603, guid: 4bafdef17c728fb4f8e92948776d4f01, type: 3}
-  - {fileID: 2115272546585522811, guid: aa1c4d2d70e4b064f8744462d2244a7d, type: 3}
-  - {fileID: 2042937247909292714, guid: 91cc519b6dc3b4b47bc55134aef38751, type: 3}
+  - {fileID: 4237846944636706411, guid: e1cfc1d1c8c73de49913ea04d2d061b9, type: 3}
+  - {fileID: 4237846944636706411, guid: 750f42b9097896c4c8482531c6f48770, type: 3}
   timeBetweenSpawn: 0.4
   minTimeSpawn: 0.2
   spawnTimeVariance: 0.25
   speed: 10
-  typeWave: 1

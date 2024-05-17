@@ -26,8 +26,7 @@ public class PowerLevelUp : MonoBehaviour
     [SerializeField] private UIDisplay displayUI;
     private const int maxPowerPiker = 3;
     private int currentLevel;
-    [SerializeField] private int currentExp;
-    private List<int> pickerIndex = new List<int>();
+    private int currentExp;
     private void Start()
     {
         currentExp = 0;
@@ -92,7 +91,6 @@ public class PowerLevelUp : MonoBehaviour
                 if (delta <= powerPickerSO.GetRateUp() && picker.activeSelf == false)
                 {
                     picker.SetActive(true);
-                    pickerIndex.Add(i);
                     RectTransform rectInstance = picker.GetComponent<RectTransform>();
                     rectInstance.anchorMin = minAnchor[countPicker];
                     rectInstance.anchorMax = maxAnchor[countPicker];
@@ -119,11 +117,11 @@ public class PowerLevelUp : MonoBehaviour
     }
     private void SetFalseAllPowerPicker()
     {
-        for (int i = 0; i < pickerIndex.Count; i++)
+        for (int i = 0; i < bodyUI.childCount; i++)
         {
-            if (bodyUI.GetChild(pickerIndex[i]).gameObject.activeSelf == true)
+            if (bodyUI.GetChild(i).gameObject.activeSelf == true)
             {
-                bodyUI.GetChild(pickerIndex[i]).gameObject.SetActive(false);
+                bodyUI.GetChild(i).gameObject.SetActive(false);
             }
         }
         bodyUI.gameObject.SetActive(false);

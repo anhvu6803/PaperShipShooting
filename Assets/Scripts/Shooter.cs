@@ -21,6 +21,7 @@ public class Shooter : MonoBehaviour
     [Header("Player")]
     [SerializeField] private bool isPlayer;
     [SerializeField] private Health health;
+    [SerializeField] private GameObject bulletPicker;
     private void Start()
     {
         numberBullet = 1;
@@ -28,6 +29,7 @@ public class Shooter : MonoBehaviour
     }
     private void Update()
     {
+        if(numberBullet == 3) GameObject.Destroy(bulletPicker);
         if(isEnemy && IsInBound() && isShooting)
         {
             isFiring = true;

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1626930992}
   - component: {fileID: 1626930993}
   - component: {fileID: 1626930994}
+  - component: {fileID: 9111092899548738623}
   - component: {fileID: 8713353325622490799}
   - component: {fileID: 6669332141341083575}
   m_Layer: 6
@@ -122,6 +123,33 @@ CircleCollider2D:
   m_Offset: {x: 0.0023153306, y: -0.00063529017}
   serializedVersion: 2
   m_Radius: 0.32315964
+--- !u!50 &9111092899548738623
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626930991}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!95 &8713353325622490799
 Animator:
   serializedVersion: 5
@@ -158,6 +186,7 @@ MonoBehaviour:
   explosionEffect: {fileID: 4267178648959492308, guid: ccb981d1295c2d14e97ba00ea43eede4,
     type: 3}
   powerShield: {fileID: 0}
+  isDontBreak: 0
 --- !u!1 &296887132503241185
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,12 +629,12 @@ PrefabInstance:
     - target: {fileID: 3644503371970609725, guid: 6e8b3cea43711de44a5a439f9f3ae270,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3644503371970609725, guid: 6e8b3cea43711de44a5a439f9f3ae270,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3644503371970609725, guid: 6e8b3cea43711de44a5a439f9f3ae270,
         type: 3}
@@ -786,7 +815,7 @@ PrefabInstance:
     - target: {fileID: 7919141650688429069, guid: 6e8b3cea43711de44a5a439f9f3ae270,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8401824044540988293, guid: 6e8b3cea43711de44a5a439f9f3ae270,
         type: 3}

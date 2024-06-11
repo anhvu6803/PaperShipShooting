@@ -30,11 +30,28 @@ public class EnemySpawner : MonoBehaviour
     {
         playerLevel = FindObjectOfType<PowerLevelUp>();
     }
-    private void Start()
+    private void OnEnable()
     {
+        isLooping = true;
         currentIndexWayShoot = 0;
         timeBetweenWaveShoot = 0;
         shootCoroutine = StartCoroutine(SpawnEnemyShoot());
+    }
+    private void OnDisable()
+    {
+        isLooping = false;
+        isSpawnShoot = false;
+        if (!isSpawnShoot && shootCoroutine != null)
+        {
+            StopCoroutine(SpawnEnemyShoot());
+            shootCoroutine = null;
+        }
+        isSpawnBoom = false;
+        if (!isSpawnBoom && boomCoroutine != null)
+        {
+            StopCoroutine(SpawnEnemyBoom());
+            boomCoroutine = null;
+        }
     }
     private void Update()
     {
@@ -92,7 +109,7 @@ public class EnemySpawner : MonoBehaviour
     }
     private IEnumerator SpawnEnemyBoom()
     {
-        do
+        while (isLooping)
         {
             yield return new WaitForSeconds(timeBetweenWaveBoom - timeAnnouceDangerBeforeSpawnEnemy);
             currentWaveBoom = waveConfigBoom[Random.Range(0, waveConfigBoom.Count)];
@@ -107,7 +124,7 @@ public class EnemySpawner : MonoBehaviour
             }
             timeBetweenWaveBoom = Mathf.Clamp(timeBetweenWaveBoom - Mathf.Clamp((float)playerLevel.GetLevel() / 10, 0, 1), 
                 minTimeWaveBoom, float.MaxValue);
-        } while (isLooping);
+        }
     }
     private IEnumerator SpawnEnemyShoot()
     {

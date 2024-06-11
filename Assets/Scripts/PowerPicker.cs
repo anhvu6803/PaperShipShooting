@@ -10,13 +10,13 @@ public class PowerPicker : MonoBehaviour
     private Health playerHealth;
     private Player playerState;
     private DamageDealer bulletDamage;
-    private Shooter playerShooter;
+    private Shooter playerNumberBullet;
     private void Start()
     {
         playerHealth = player.GetComponent<Health>();
         playerState = player.GetComponent<Player>();
         bulletDamage = playerBullet.GetComponent<DamageDealer>();
-        playerShooter = player.GetComponent<Shooter>();
+        playerNumberBullet = player.GetComponent<Shooter>();
     }
     public void PickPower()
     {
@@ -41,7 +41,7 @@ public class PowerPicker : MonoBehaviour
                 playerState.ModifySpeed(pickerSO.GetNumberIncrease());
                 break;
             case PickerType.bullet:
-                playerShooter.ModifyNumberBullet(pickerSO.GetNumberIncrease());
+                playerNumberBullet.ModifyNumberBullet(pickerSO.GetNumberIncrease());
                 break;
         }
     }

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class UIDisplay : MonoBehaviour
 {
+    private static UIDisplay instance;
     [Header("Health")]
     [SerializeField] private Slider healthBar;
     [SerializeField] private Health health;

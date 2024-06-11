@@ -25,14 +25,18 @@ public class PowerLevelUp : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private UIDisplay displayUI;
     private const int maxPowerPiker = 3;
-    private int currentLevel;
-    private int currentExp;
-    private void Start()
+    private static int currentLevel;
+    private static int currentExp;
+    private void Awake()
     {
         currentExp = 0;
         currentLevel = 1;
+    }
+    private void Start()
+    {
         expSlider.maxValue = initialExp;
         expSlider.value = currentExp;
+        Debug.Log($"level {currentLevel}");
     }
     public int GetLevel()
     {
@@ -40,6 +44,7 @@ public class PowerLevelUp : MonoBehaviour
     }
     public void CollectExp(int exp)
     {
+        Debug.Log($"level {currentLevel}");
         currentExp += exp;
         expSlider.value = currentExp;
         StartCoroutine(HideBar());
@@ -57,8 +62,7 @@ public class PowerLevelUp : MonoBehaviour
     }
     private void LevelUp()
     {
-        currentLevel++;
-        LevelUpEffectPlay();   
+        currentLevel++;  
         ResetExpBar();
         StartCoroutine(WaitToInvokePowerPicker());
     }
@@ -103,6 +107,7 @@ public class PowerLevelUp : MonoBehaviour
     }
     private IEnumerator WaitToInvokePowerPicker()
     {
+        LevelUpEffectPlay();
         yield return new WaitForSeconds(delay);
         cameraShake.Stop();
         Time.timeScale = 0f;

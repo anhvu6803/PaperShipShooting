@@ -11,14 +11,11 @@ public class PowerShield : MonoBehaviour
     [SerializeField] private float existTime;
     [SerializeField] private Health healthObject;
     private Animator animator;
-    [SerializeField] private int health;
+    private int health;
     private StorePower storePower;
     private void Awake()
     {
         storePower = FindObjectOfType<StorePower>();
-    }
-    private void Start()
-    {
         animator = shield.GetComponent<Animator>();
     }
     public float GetExistTime()

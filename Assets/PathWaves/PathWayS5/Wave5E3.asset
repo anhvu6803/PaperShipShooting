@@ -19,13 +19,12 @@ MonoBehaviour:
   - {fileID: 6576739815258107264, guid: aed6cf25b7926154aacf27338a8d8ee0, type: 3}
   - {fileID: 6576739815258107264, guid: aed6cf25b7926154aacf27338a8d8ee0, type: 3}
   pathWay:
-  - {fileID: 966419290614794450, guid: 9807dc7ff529d5f428a1affb0583c64f, type: 3}
-  - {fileID: 4270054764858392466, guid: ae52f8f03572fb44382adc3cb3ca7462, type: 3}
-  - {fileID: 4116348976246804549, guid: 6bb03081c6d379040b5f0fb8b31b13f3, type: 3}
-  - {fileID: 2039112884189864468, guid: 12dac898318e0fb4b843ad590a02e425, type: 3}
+  - {fileID: 8197578474921947917, guid: 4df7ba14458b4c44c83db9133410ead8, type: 3}
+  - {fileID: 8197578474921947917, guid: 3c98ffc1caf9c5e459bbdcbcbaeceefe, type: 3}
+  - {fileID: 8197578474921947917, guid: 9425b5523c365c347a9a1d3a9e0f444d, type: 3}
+  - {fileID: 8197578474921947917, guid: a22fc5a65134c374a8de55343ab2e131, type: 3}
   - {fileID: 8197578474921947917, guid: e6558ee2596af7b44b928b8b47d9144b, type: 3}
   timeBetweenSpawn: 0.4
   minTimeSpawn: 0.3
   spawnTimeVariance: 0.25
   speed: 6
-  typeWave: 1

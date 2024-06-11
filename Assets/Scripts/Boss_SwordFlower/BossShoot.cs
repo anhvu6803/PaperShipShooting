@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,14 +11,20 @@ public class BossShoot : MonoBehaviour
     [SerializeField] private float delaySpawnTime;
     [SerializeField] private float countDown;
     [SerializeField] private Transform bossContainer;
+    [SerializeField] private float newCountDown;
     private float countDownTemp;
     private List<Transform> points = new List<Transform>();
     private float angleY;
     private bool isShoot;
     private Coroutine shootCoroutine;
     private BossLaser bossLaser;
+    private BossShield bossShield;
+    public event Action<bool> onShooting;
     private void Start()
     {
+        bossShield = gameObject.GetComponent<BossShield>();
+        bossShield.onShieldBreak += ModifyCountDown;
+        bossShield._onShieldBreak += SetActiveObject;
         bossLaser = gameObject.GetComponent<BossLaser>();
         foreach (Transform t in pointSpawn.transform)
         {
@@ -26,16 +33,24 @@ public class BossShoot : MonoBehaviour
     }
     private void Update()
     {
+        if (gameObject.GetComponent<Health>().GetBossDie()) return;
+
         if(countDownTemp > 0)
         {
             countDownTemp -= Time.deltaTime;
             isShoot = false;
+            onShooting(true);
         }
         else if(!bossLaser.GetLaserFiring())
         {
             isShoot = true;
+            onShooting(false);
         }
         SpawnShootManage();
+    }
+    private void ModifyCountDown()
+    {
+        countDown = newCountDown;
     }
     private void SpawnShootManage()
     {
@@ -48,6 +63,10 @@ public class BossShoot : MonoBehaviour
             StopCoroutine(shootCoroutine);
             shootCoroutine = null;
         }
+    }
+    private void SetActiveObject(bool isActive)
+    {
+        this.enabled = isActive;
     }
     private IEnumerator SpawnShoot()
     {

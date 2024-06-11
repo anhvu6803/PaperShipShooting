@@ -117,18 +117,26 @@ public class SpawnSword : MonoBehaviour
     }
     private IEnumerator SwordSpawning(GameObject sword, float angleY, GameObject swordSpawn)
     {
-        sword.SetActive(false);
-        yield return new WaitForSeconds(delaySpawnTime);
-        Instantiate(swordSpawn, playerTransform.position, Quaternion.Euler(0, angleY, 0));
-        yield return new WaitForSeconds(waitingTime);
-        sword.SetActive(true);
-        if (sword.CompareTag("SmallSword"))
+        if (sword != null)
         {
-            ss_CountDownTemp = ss_CountDown;
-        }
-        else if (sword.CompareTag("LargeSword"))
-        {
-            ls_CountDownTemp = ls_CountDown;
+            sword.GetComponent<Collider2D>().enabled = false;
+            sword.SetActive(false);
+            yield return new WaitForSeconds(delaySpawnTime);
+            Instantiate(swordSpawn, playerTransform.position, Quaternion.Euler(0, angleY, 0));
+            yield return new WaitForSeconds(waitingTime);
+            if (sword != null)
+            {
+                sword.SetActive(true);
+                sword.GetComponent<Collider2D>().enabled = true;
+            }
+            if (sword.CompareTag("SmallSword"))
+            {
+                ss_CountDownTemp = ss_CountDown;
+            }
+            else if (sword.CompareTag("LargeSword"))
+            {
+                ls_CountDownTemp = ls_CountDown;
+            }
         }
     }
 }

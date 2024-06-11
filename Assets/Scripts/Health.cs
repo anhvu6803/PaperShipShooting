@@ -13,6 +13,9 @@ public class Health : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Collider2D objectCollider;
     [SerializeField] private bool hasShield;
+    [SerializeField] private ParticleSystem breakEffect;
+    [SerializeField] private ParticleSystem dieEffect;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     [Header("Player")]
     [SerializeField] private bool isPlayer;
     [SerializeField] private bool isApplyCameraShake;
@@ -22,7 +25,11 @@ public class Health : MonoBehaviour
     private CameraShake shake;
     private StorePower storePower;
     private PowerLevelUp powerLevelUp;
-    private bool isPlayerDie;
+    [SerializeField] private bool isPlayerDie;
+    [Header("Boss")]
+    [SerializeField] private bool isBoss;
+    [SerializeField] private GameObject sonicBoomBoss;
+    private bool isBossDie;
     private void Awake()
     {
         shake = FindObjectOfType<CameraShake>();
@@ -32,6 +39,7 @@ public class Health : MonoBehaviour
     }
     private void Start()
     {
+        isBossDie = false;
         isPlayerDie = false;
         health = maxHealth;
     }
@@ -58,16 +66,22 @@ public class Health : MonoBehaviour
         if(damage != null)
         {
             TakeDamage(damage.GetDamage());
-            PlayExplosionEffect();
+            PlayEffect(explosionEffect);
             if (!collision.CompareTag("Ultimate") && !collision.CompareTag("Boss"))
             {
                 damage.Hit();
             }
         }
-        if(collision.CompareTag("SonicBoom"))
+        if (collision.CompareTag("SonicBoom") && isPlayer)
+        {
+            Debug.Log("player hit");
+            StartCoroutine(AddForcePlayer());
+        }       
+        else if (collision.CompareTag("SonicBoom"))
         {
             Destroy(gameObject);
         }
+        
         if (isPlayer && collision.CompareTag("Power"))
         {
             CollectPower power = collision.GetComponent<CollectPower>();
@@ -108,14 +122,14 @@ public class Health : MonoBehaviour
         {
             objectCollider.enabled = false;
         }
-        if (!isPlayer)
+        if (!isPlayer && !isBoss)
         {
             StartCoroutine(WaitForDestroyObject());
             GeneratePower power = FindObjectOfType<GeneratePower>();
             power.PowerGenerate(gameObject.transform.position);
             scoreKeeper.ModifyScore(score);
         }
-        else
+        else if(isPlayer)
         {
             isPlayerDie = true;
             if (enemySpawn != null)
@@ -124,28 +138,52 @@ public class Health : MonoBehaviour
             }
             StartCoroutine(WaitForDestroyObject());
         }
+        else if(isBoss)
+        {
+            isBossDie = true;
+            StartCoroutine(WaitForDestroyObject());
+            scoreKeeper.ModifyScore(score);
+        }
     }
     public bool GetPlayerDie()
     {
         return isPlayerDie;
+    }
+    public bool GetBossDie()
+    {
+        return isBossDie;
     }
     private IEnumerator WaitForDestroyObject()
     {
         if (animator != null)
         {
             animator.enabled = true;
+            animator.SetBool("isDie", true);
         }
-        float waitingTime = dieAnimation != null ? dieAnimation.length : 0;
+        float waitingTime = dieAnimation != null ? dieAnimation.length + .3f : 0;
         yield return new WaitForSeconds(waitingTime);
+        if (isPlayer || isBoss) {
+            PlayEffect(dieEffect);
+            yield return new WaitForSeconds(dieEffect.main.duration + dieEffect.main.startLifetime.constantMax);
+        }
+        spriteRenderer.enabled = false;
+        PlayEffect(breakEffect);
         if (isPlayer)
         {
             sonicBoom.SetActive(true);
+            yield return new WaitForSeconds(sonicBoom.GetComponent<SonicBoom>().GetSonicBoomExistTime());
+            Destroy(gameObject);
         }
-        else
+        else if (isBoss)
+        {
+            sonicBoomBoss.SetActive(true);
+            yield return new WaitForSeconds(sonicBoomBoss.GetComponent<SonicBoom>().GetSonicBoomExistTime());
+            Destroy(gameObject);
+        }
+        else if(health <= 0)
         {
             Destroy(gameObject);
         }
-        
     }
     private void ShakeCamera()
     {
@@ -154,11 +192,27 @@ public class Health : MonoBehaviour
             shake.Play();
         }
     }
-    private void PlayExplosionEffect()
+    private IEnumerator AddForcePlayer()
     {
-        if(explosionEffect != null)
+        gameObject.GetComponent<Shooter>().enabled = false;
+        gameObject.GetComponent<Shooter>().StopFireCoroutine();
+        gameObject.GetComponent<Player>().enabled = false;
+        yield return new WaitForSeconds(.2f);
+        Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
+        if (rb != null)
         {
-            ParticleSystem instance = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            rb.velocity = Vector2.down;
+            rb.AddForce(-transform.up * 1000f, ForceMode2D.Impulse);
+        }
+        yield return new WaitForSeconds(.8f);
+        gameObject.GetComponent<Shooter>().enabled = true;
+        gameObject.GetComponent<Player>().enabled = true;
+    }
+    private void PlayEffect(ParticleSystem effect)
+    {
+        if(effect != null)
+        {
+            ParticleSystem instance = Instantiate(effect, transform.position, Quaternion.identity);
             Destroy(instance.gameObject, instance.main.duration + instance.main.startLifetime.constantMax);
         }
     }

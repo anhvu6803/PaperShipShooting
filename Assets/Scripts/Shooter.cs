@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
+    [Header("General")]
     [SerializeField] private GameObject bullet;
     [SerializeField] private float speed;
     [SerializeField] private float fireRate;
     [SerializeField] private int numberBullet;
     [SerializeField] private float paddingPos;
     [SerializeField] private int maxBullet;
+    [SerializeField] private bool isFiring;
+    private Coroutine fireCoroutine;
     [Header("Enemy")]
     [SerializeField] private bool isEnemy;
-    [SerializeField] private bool isFiring;
     [SerializeField] private bool isShooting;
-    private Coroutine fireCoroutine;
     private Camera mainCamera;
     private Vector2 maxBound;
     private Vector2 minBound;
@@ -27,9 +28,13 @@ public class Shooter : MonoBehaviour
         numberBullet = 1;
         InitBound();
     }
+    private void OnEnable()
+    {
+        fireCoroutine = null;
+    }
     private void Update()
     {
-        if(numberBullet == 3) GameObject.Destroy(bulletPicker);
+        if(numberBullet == maxBullet) GameObject.Destroy(bulletPicker);
         if(isEnemy && IsInBound() && isShooting)
         {
             isFiring = true;
@@ -43,6 +48,15 @@ public class Shooter : MonoBehaviour
             isFiring = false;
         }
         Fire();
+    }
+    public void StopFireCoroutine()
+    {
+        isFiring = false;
+        if (!isFiring && fireCoroutine != null)
+        {
+            StopCoroutine(fireCoroutine);
+            fireCoroutine = null;
+        }
     }
     public void SetShooting(bool isActive)
     {
@@ -79,6 +93,13 @@ public class Shooter : MonoBehaviour
     {
         fireRate -= bonusFireRate;
     }
+    public void ModifyNumberBullet(int bonusNumberBullet)
+    {
+        if(numberBullet < maxBullet)
+        {
+            numberBullet += bonusNumberBullet;
+        }
+    }
     private IEnumerator FireNormalBullet()
     {
         while(true)
@@ -97,13 +118,6 @@ public class Shooter : MonoBehaviour
                 }
             }
             yield return new WaitForSeconds(fireRate);
-        }
-    }
-    public void ModifyNumberBullet(int bonusBullet)
-    {
-        if (numberBullet < maxBullet)
-        {
-            numberBullet += bonusBullet;
         }
     }
     private Vector2 RandomPositionBullet(int index)

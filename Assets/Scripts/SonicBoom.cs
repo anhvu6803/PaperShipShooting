@@ -6,12 +6,16 @@ using UnityEngine;
 public class SonicBoom : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private Transform playerTransform;
+    [SerializeField] private Transform objectTransform;
     [SerializeField] private float sonicBoomExistTime;
     private Vector2 magnitudeBoom;
     private LevelManager levelManager;
     private bool isLoad;
     private Coroutine loadGameOver;
+    [Header("Player")]
+    [SerializeField] private bool isPlayer;
+    [Header("Boss")]
+    [SerializeField] private bool isBoss;
     private void Awake()
     {
         levelManager = FindObjectOfType<LevelManager>();
@@ -22,16 +26,28 @@ public class SonicBoom : MonoBehaviour
     }
     private void Update()
     {
-        if (gameObject.activeSelf)
+        if (isPlayer)
         {
-            if(playerTransform != null)
+            if (gameObject.activeSelf)
             {
-                gameObject.transform.position = playerTransform.position;
+                if (objectTransform != null)
+                {
+                    gameObject.transform.position = objectTransform.position;
+                }
+                IncreaseExplosion();
+                isLoad = true;
             }
-            IncreaseExplosion();
-            isLoad = true;
+
+            LoadGameOverManager();
         }
-        LoadGameOverManager();
+        else if (isBoss)
+        {
+            IncreaseExplosion();
+        }
+    }
+    public float GetSonicBoomExistTime()
+    {
+        return sonicBoomExistTime;
     }
     private void LoadGameOverManager()
     {

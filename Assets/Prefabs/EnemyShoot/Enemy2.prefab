@@ -133,10 +133,12 @@ MonoBehaviour:
   numberBullet: 1
   paddingPos: 0
   maxBullet: 1
-  isEnemy: 1
   isFiring: 0
+  isEnemy: 1
   isShooting: 0
   isPlayer: 0
+  health: {fileID: 0}
+  bulletPicker: {fileID: 0}
 --- !u!114 &5810195254719516003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,12 +153,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 30
   maxHealth: 30
-  isApplyCameraShake: 0
   score: 100
-  isPlayer: 0
-  hasShield: 0
   explosionEffect: {fileID: 4267178648959492308, guid: ccb981d1295c2d14e97ba00ea43eede4,
     type: 3}
+  dieAnimation: {fileID: 0}
+  animator: {fileID: 0}
+  objectCollider: {fileID: -3360051073351305043}
+  hasShield: 0
+  breakEffect: {fileID: 1171535961712423337, guid: d88b673402751644593ad147903e3ca2,
+    type: 3}
+  dieEffect: {fileID: 0}
+  spriteRenderer: {fileID: 3278517657122289892}
+  isPlayer: 0
+  isApplyCameraShake: 0
+  sonicBoom: {fileID: 0}
+  enemySpawn: {fileID: 0}
+  isBoss: 0
+  sonicBoomBoss: {fileID: 0}
 --- !u!114 &1029059060872815278
 MonoBehaviour:
   m_ObjectHideFlags: 0

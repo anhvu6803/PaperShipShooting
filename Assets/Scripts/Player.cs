@@ -18,6 +18,11 @@ public class Player : MonoBehaviour
     }
     void Update()
     {
+        if (health.GetPlayerDie()) 
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
         ProcessInput();
     }
     private void FixedUpdate()

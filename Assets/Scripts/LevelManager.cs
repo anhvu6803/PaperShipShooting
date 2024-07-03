@@ -7,14 +7,17 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private List<DamageDealer> damageDealers;
     private ScoreKeeper scoreKeeper;
+    private StorePower storePower;
     private void Awake()
     {
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        storePower = FindObjectOfType<StorePower>();
     }
     public void LoadGame()
     {
         Time.timeScale = 1f;
         scoreKeeper.ResetScore();
+        storePower.ResetPower();
         SceneManager.LoadScene("LoadSceneGame");
     }
     public void LoadGameOver()

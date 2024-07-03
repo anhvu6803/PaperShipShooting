@@ -9,21 +9,28 @@ public class BossManager : MonoBehaviour
     [SerializeField] private GameObject sonicBoomBoss;
     [SerializeField] private CurtainManager curtainManager;
     [SerializeField] private GameObject bossCountDownSlider;
+    [SerializeField] private CountDownBossAppear bossAppear;
     private bool isBossDie;
     private Coroutine bossDieCoroutine;
+    private void Start()
+    {
+        bossAppear.onBossBattle += IsBossBattle;
+    }
     private void Update()
     {
         if(bossObject == null)
         {
             isBossDie = true;
-            bossCountDownSlider.SetActive(false);
         }
         else
         {
-            bossCountDownSlider.SetActive(true);
             isBossDie = false;
         }
         ManageDelayToLoadGame();
+    }
+    public void IsBossBattle(bool isActive)
+    {
+        bossCountDownSlider.SetActive(!isActive);
     }
     private void ManageDelayToLoadGame()
     {

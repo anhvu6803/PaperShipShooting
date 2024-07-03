@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class CountDownBossAppear : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class CountDownBossAppear : MonoBehaviour
     [SerializeField] private CameraShake cameraShake;
     [SerializeField] private CurtainManager curtainManager;
     private Vector2 previousPosition;
+    public event Action<bool> onBossBattle;
     private void Start()
     {
         previousPosition = Vector2.zero;
@@ -35,6 +38,7 @@ public class CountDownBossAppear : MonoBehaviour
     {
         if(coutDownBossSlider.value <= 0)
         {
+            onBossBattle(true);
             StartCoroutine(DelayToChangeScene());
         }
     }

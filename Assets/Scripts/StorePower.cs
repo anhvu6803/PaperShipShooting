@@ -24,14 +24,14 @@ public class StorePower : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-    public int GetShieldCount()
-    {
-        return shieldCount;
-    }
-    public void ResetCount()
+    public void ResetPower()
     {
         shieldCount = 0;
         ultimateCount = 0;
+    }
+    public int GetShieldCount()
+    {
+        return shieldCount;
     }
     public void IncreaseShieldCount()
     {

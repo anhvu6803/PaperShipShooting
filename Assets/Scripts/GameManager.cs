@@ -6,7 +6,9 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseUI;
     [SerializeField] private GameObject bodyUI;
-    private CameraShake cameraShake;
+    [SerializeField] private GameObject settingUI;
+
+     private CameraShake cameraShake;
     public void PauseGame()
     {
         cameraShake = FindObjectOfType<CameraShake>();
@@ -21,11 +23,23 @@ public class GameManager : MonoBehaviour
     public void ResumeGame()
     {
         LoadPauseUI(false);
+        LoadSettingUI(false);
         if (!bodyUI.activeSelf)
         {
             cameraShake = FindObjectOfType<CameraShake>();
             Time.timeScale = 1f;
             cameraShake.ShakeDurationBack();
         }
+    }
+    public void SettingScene()
+    {
+        cameraShake = FindObjectOfType<CameraShake>();
+        cameraShake.Stop();
+        Time.timeScale = 0;
+        LoadSettingUI(true);
+    }
+    private void LoadSettingUI(bool isActive)
+    {
+        settingUI.SetActive(isActive);
     }
 }

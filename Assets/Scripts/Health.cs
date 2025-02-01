@@ -16,26 +16,31 @@ public class Health : MonoBehaviour
     [SerializeField] private ParticleSystem breakEffect;
     [SerializeField] private ParticleSystem dieEffect;
     [SerializeField] private SpriteRenderer spriteRenderer;
+
     [Header("Player")]
     [SerializeField] private bool isPlayer;
     [SerializeField] private bool isApplyCameraShake;
     [SerializeField] private GameObject sonicBoom;
     [SerializeField] private EnemySpawner enemySpawn;
+    [SerializeField] private bool isPlayerDie;
+
+    [Header("Boss")]
+    [SerializeField] private bool isBoss;
+    [SerializeField] private GameObject sonicBoomBoss;
+
+    private bool isBossDie;
     private ScoreKeeper scoreKeeper;
     private CameraShake shake;
     private StorePower storePower;
     private PowerLevelUp powerLevelUp;
-    [SerializeField] private bool isPlayerDie;
-    [Header("Boss")]
-    [SerializeField] private bool isBoss;
-    [SerializeField] private GameObject sonicBoomBoss;
-    private bool isBossDie;
+    private AudioPlayer audioPlayer;
     private void Awake()
     {
         shake = FindObjectOfType<CameraShake>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
         storePower = FindObjectOfType<StorePower>();
         powerLevelUp = FindObjectOfType<PowerLevelUp>();
+        audioPlayer = FindObjectOfType<AudioPlayer>();
     }
     private void Start()
     {
@@ -65,6 +70,7 @@ public class Health : MonoBehaviour
         DamageDealer damage = collision.GetComponent<DamageDealer>();
         if(damage != null)
         {
+            audioPlayer.PlayImpactClip();
             TakeDamage(damage.GetDamage());
             PlayEffect(explosionEffect);
             if (!collision.CompareTag("Ultimate") && !collision.CompareTag("Boss"))
@@ -74,7 +80,7 @@ public class Health : MonoBehaviour
         }
         if (collision.CompareTag("SonicBoom") && isPlayer)
         {
-            Debug.Log("player hit");
+            audioPlayer.PlayExplosionClip();
             StartCoroutine(AddForcePlayer());
         }       
         else if (collision.CompareTag("SonicBoom"))
@@ -108,7 +114,7 @@ public class Health : MonoBehaviour
             ShakeCamera();
         }
         if(health <= 0)
-        {
+        {     
             Die();
         }
     }

@@ -7,7 +7,13 @@ public class HitShield : MonoBehaviour
     [SerializeField] private ParticleSystem explosionEffect;
     [SerializeField] private PowerShield powerShield;
     [SerializeField] private bool isDontBreak;
+
     private float existTimeShield;
+    private AudioPlayer audioPlayer;
+    private void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
     private void Start()
     {
         existTimeShield = powerShield.GetExistTime();
@@ -30,6 +36,7 @@ public class HitShield : MonoBehaviour
         {
             if (!isDontBreak)
             {
+                audioPlayer.PlayImpactShieldClip();
                 powerShield.TakeDamageShield(damage.GetDamage());
             }
             PlayExplosionEffect(collision.transform.position);

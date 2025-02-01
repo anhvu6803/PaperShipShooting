@@ -13,10 +13,12 @@ public class PowerShield : MonoBehaviour
     private Animator animator;
     private int health;
     private StorePower storePower;
+    private AudioPlayer audioPlayer;
     private void Awake()
     {
         storePower = FindObjectOfType<StorePower>();
         animator = shield.GetComponent<Animator>();
+        audioPlayer = FindObjectOfType<AudioPlayer>();
     }
     public float GetExistTime()
     {
@@ -36,7 +38,8 @@ public class PowerShield : MonoBehaviour
     }
     public void UseShield()
     {
-        healthObject.SetHasShield(true);    
+        healthObject.SetHasShield(true);
+        audioPlayer.PlayShieldClip();
         shield.SetActive(true);
         shield.GetComponent<SpriteRenderer>().sprite = shieldSprite;
         health = maxHealth;
@@ -50,6 +53,7 @@ public class PowerShield : MonoBehaviour
     {
         healthObject.SetHasShield(false);
         animator.SetBool("isBreak", true);
+        audioPlayer.PlayBreakShieldClip();
         yield return new WaitForSeconds(breakShield.length);
         shield.SetActive(false);
         animator.SetBool("isBreak", false);

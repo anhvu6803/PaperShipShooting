@@ -18,6 +18,7 @@ public class CountDownBossAppear : MonoBehaviour
     [SerializeField] private float delayTime;
     [SerializeField] private CameraShake cameraShake;
     [SerializeField] private CurtainManager curtainManager;
+
     private Vector2 previousPosition;
     public event Action<bool> onBossBattle;
     private void Start()
@@ -44,7 +45,7 @@ public class CountDownBossAppear : MonoBehaviour
     }
     private IEnumerator DelayToChangeScene()
     {
-        while(delayTime > 0)
+        while (delayTime > 0)
         {
             Transform instance = Instantiate(dangerIcon.transform, DangerIconSpawnPosition(previousPosition), Quaternion.identity, transform);
             instance.GetComponent<KeepInScene>().enabled = false;
@@ -53,6 +54,7 @@ public class CountDownBossAppear : MonoBehaviour
             cameraShake.Play();
             yield return null;
         }
+        yield return new WaitForSeconds(.2f);
         StartCoroutine(curtainManager.CurtainDown());
         yield return new WaitForSeconds(.2f);
         DestroyAllDangerIcon();

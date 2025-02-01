@@ -26,10 +26,6 @@ public class LevelManager : MonoBehaviour
         ResetDamageDealer();
         SceneManager.LoadScene("LoadSceneGameOver");
     }
-    public void LoadMainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
     public void QuitGame()
     {
         Debug.Log("Quit Game .....");

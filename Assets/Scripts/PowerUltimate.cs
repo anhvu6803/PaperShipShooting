@@ -14,12 +14,15 @@ public class PowerUltimate : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float destroyTime;
     private StorePower storePower;
+    private AudioPlayer audioPlayer;
     private void Awake()
     {
         storePower = FindObjectOfType<StorePower>();  
+        audioPlayer = FindObjectOfType<AudioPlayer>();
     }
     public void UseUltimate()
     {
+        audioPlayer.PlayUltimateClip();
         StartCoroutine(SpawnUltimate());
         storePower.DecreaseUltimateCount();
     }
@@ -33,6 +36,7 @@ public class PowerUltimate : MonoBehaviour
             {
                 rb.velocity = transform.up * speed;
             }
+            audioPlayer.PlayShootingClip();
             Destroy(instance, destroyTime);
             yield return new WaitForSeconds(timeBetweenSpawn);
         }

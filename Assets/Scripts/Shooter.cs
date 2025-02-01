@@ -12,17 +12,25 @@ public class Shooter : MonoBehaviour
     [SerializeField] private float paddingPos;
     [SerializeField] private int maxBullet;
     [SerializeField] private bool isFiring;
-    private Coroutine fireCoroutine;
+    
     [Header("Enemy")]
     [SerializeField] private bool isEnemy;
     [SerializeField] private bool isShooting;
-    private Camera mainCamera;
-    private Vector2 maxBound;
-    private Vector2 minBound;
+    
     [Header("Player")]
     [SerializeField] private bool isPlayer;
     [SerializeField] private Health health;
     [SerializeField] private GameObject bulletPicker;
+
+    private Camera mainCamera;
+    private Vector2 maxBound;
+    private Vector2 minBound;
+    private Coroutine fireCoroutine;
+    private AudioPlayer audioPlayer;
+    private void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
     private void Start()
     {
         numberBullet = 1;
@@ -116,6 +124,15 @@ public class Shooter : MonoBehaviour
                         rb.velocity = transform.up * speed;
                     }
                 }
+                if (isPlayer)
+                {
+                    audioPlayer.PlayShootingClip();
+                }
+                else
+                {
+                    audioPlayer.PlayEnemyShootingClip();
+                }
+               
             }
             yield return new WaitForSeconds(fireRate);
         }

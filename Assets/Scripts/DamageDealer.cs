@@ -6,6 +6,11 @@ public class DamageDealer : MonoBehaviour
 {
     [SerializeField] private int damage;
     [SerializeField] private int initialDamage;
+    private AudioPlayer audioPlayer;
+    private void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
     public void ResetDamage()
     {
         damage = initialDamage;

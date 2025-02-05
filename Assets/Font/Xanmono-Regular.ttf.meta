@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8853b244fffa0d440b45f2eb48bbf3e5
+guid: befede7af3fa7fa47970fd7587777d19
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Feta Morgana
+  - Xanmono
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

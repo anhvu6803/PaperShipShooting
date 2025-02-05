@@ -7,14 +7,13 @@ using UnityEngine.UI;
 public class UIGameOverDisplay : MonoBehaviour
 {
     [SerializeField] GameObject iconObject;
-    // y * adjustConst = equationConstA * x / equationConstB;
     [SerializeField] private float adjustConst;
+    [SerializeField] private CoinManagerData coinManager;
+
     [Header("Score")]
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private float speedScore;
-    private ScoreKeeper scoreKeeper;
-    private float maxScore;
-    private float currentScore;
+    
     [Header("Coin")]
     [SerializeField] private TextMeshProUGUI coinText;
     [SerializeField] private GameObject coinObject;
@@ -23,10 +22,7 @@ public class UIGameOverDisplay : MonoBehaviour
     [SerializeField] private float equationCoinA;
     [SerializeField] private float equationCoinB;
     [SerializeField] private float maxCoinEarn;
-    private Image coinImage;
-    private float speedCoin;
-    private float maxCoin;
-    private float currentCoin;
+    
     [Header("Exp")]
     [SerializeField] private TextMeshProUGUI expText;
     [SerializeField] private GameObject expObject;
@@ -35,10 +31,19 @@ public class UIGameOverDisplay : MonoBehaviour
     [SerializeField] private float equationExpA;
     [SerializeField] private float equationExpB;
     [SerializeField] private float maxExpEarn;
+
+    private Image coinImage;
+    private float speedCoin;
+    private float maxCoin;
+    private float currentCoin;
+    private ScoreKeeper scoreKeeper;
+    private float maxScore;
+    private float currentScore;
     private Image expImage;
     private float speedExp;
     private float maxExp;
     private float currentExp;
+
     private void Awake()
     {
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
@@ -133,6 +138,7 @@ public class UIGameOverDisplay : MonoBehaviour
         {
             currentExp += Time.deltaTime * speedExp;
             currentExp = Mathf.Clamp(Mathf.FloorToInt(currentExp), 0, maxExp);
+            coinManager.SetExpManager(Mathf.FloorToInt(currentExp));
             expText.text = currentExp.ToString();
         }
     }
@@ -160,6 +166,7 @@ public class UIGameOverDisplay : MonoBehaviour
         {
             currentCoin += Time.deltaTime * speedCoin;
             currentCoin = Mathf.Clamp(Mathf.FloorToInt(currentCoin), 1, maxCoin);
+            coinManager.SetCoinManager(Mathf.FloorToInt(currentCoin));
             coinText.text = currentCoin.ToString();
         }
     }

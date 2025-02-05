@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4397712326096750592
+--- !u!1 &494116921811305315
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4397712326096750606}
-  - component: {fileID: 4397712326096750607}
+  - component: {fileID: 1013472731196520839}
+  - component: {fileID: 693757870106159831}
   m_Layer: 0
-  m_Name: LevelManager
+  m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4397712326096750606
+--- !u!4 &1013472731196520839
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4397712326096750592}
+  m_GameObject: {fileID: 494116921811305315}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,22 +32,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4397712326096750607
+--- !u!114 &693757870106159831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4397712326096750592}
+  m_GameObject: {fileID: 494116921811305315}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d763f760b7b643749ba88e7a6b5e9d1f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7cc12be183f510b4eac076980885b269, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealers:
-  - {fileID: -5977382245744267084, guid: eb30c4ded5e89994294c5c216e5b7487, type: 3}
-  - {fileID: -3998951252960481557, guid: 066a5a7e005e212409be9b3f56a83936, type: 3}
-  - {fileID: 4343969538211276236, guid: 04740d74aa9bb02449ca2b4512299e0a, type: 3}
-  - {fileID: 1029059060872815278, guid: d3c403394398e6545b7ef649a0237463, type: 3}
-  - {fileID: -25747033344869339, guid: aed6cf25b7926154aacf27338a8d8ee0, type: 3}
-  sceneData: {fileID: 11400000, guid: 3e67f529298e16b4891755da835af2b7, type: 2}
+  soundSlider: {fileID: 0}
+  musicSlider: {fileID: 0}

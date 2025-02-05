@@ -11,6 +11,8 @@ public class LoadSceneUI : MonoBehaviour
     [SerializeField] private float loadSpeed;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private float paddingBottom;
+    [SerializeField] private SceneData sceneData;
+
     private Vector2 startPosition;
     private Vector2 endPosition;
     private Rigidbody2D rb;
@@ -42,7 +44,7 @@ public class LoadSceneUI : MonoBehaviour
     {
         if (loadBar.value == loadBar.maxValue)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(sceneData.LoadName());
         }
     }
 }

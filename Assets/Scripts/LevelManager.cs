@@ -6,25 +6,39 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private List<DamageDealer> damageDealers;
+    [SerializeField] private SceneData sceneData;
+    
     private ScoreKeeper scoreKeeper;
     private StorePower storePower;
-    private void Awake()
-    {
-        scoreKeeper = FindObjectOfType<ScoreKeeper>();
-        storePower = FindObjectOfType<StorePower>();
-    }
+
     public void LoadGame()
     {
         Time.timeScale = 1f;
-        scoreKeeper.ResetScore();
-        storePower.ResetPower();
+
+        if (scoreKeeper != null)
+        {
+            scoreKeeper.ResetScore();
+        }
+
+        if (storePower != null)
+        {
+            storePower.ResetPower();
+        }
+
+        sceneData.SetLoadName("Game");
+        SceneManager.LoadScene("LoadSceneGame");
+    }
+    public void LoadMainMenu()
+    {
+        sceneData.SetLoadName("MainMenu");
         SceneManager.LoadScene("LoadSceneGame");
     }
     public void LoadGameOver()
     {
         Time.timeScale = 1f;
         ResetDamageDealer();
-        SceneManager.LoadScene("LoadSceneGameOver");
+        sceneData.SetLoadName("GameOver");
+        SceneManager.LoadScene("LoadSceneGame");
     }
     public void QuitGame()
     {

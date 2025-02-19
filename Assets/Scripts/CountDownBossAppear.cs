@@ -15,12 +15,16 @@ public class CountDownBossAppear : MonoBehaviour
     [SerializeField] private float maxYBound;
     [SerializeField] private float minXBound;
     [SerializeField] private float minYBound;
-    [SerializeField] private float delayTime;
     [SerializeField] private CameraShake cameraShake;
     [SerializeField] private CurtainManager curtainManager;
 
+    private AudioPlayer audioPlayer;
     private Vector2 previousPosition;
     public event Action<bool> onBossBattle;
+    private void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
     private void Start()
     {
         previousPosition = Vector2.zero;
@@ -45,21 +49,14 @@ public class CountDownBossAppear : MonoBehaviour
     }
     private IEnumerator DelayToChangeScene()
     {
-        while (delayTime > 0)
-        {
-            Transform instance = Instantiate(dangerIcon.transform, DangerIconSpawnPosition(previousPosition), Quaternion.identity, transform);
-            instance.GetComponent<KeepInScene>().enabled = false;
-            previousPosition = instance.position;
-            delayTime -= Time.deltaTime;
-            cameraShake.Play();
-            yield return null;
-        }
+        audioPlayer.MuteMusic();
         yield return new WaitForSeconds(.2f);
         StartCoroutine(curtainManager.CurtainDown());
         yield return new WaitForSeconds(.2f);
         DestroyAllDangerIcon();
         yield return new WaitForSeconds(.8f);
         StartCoroutine(curtainManager.CurtainUp());
+        audioPlayer.PlayMusic();
     }
     private void DestroyAllDangerIcon()
     {

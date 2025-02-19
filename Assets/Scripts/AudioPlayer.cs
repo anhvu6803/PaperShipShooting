@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioPlayer : MonoBehaviour
 {
     [SerializeField][Range(0f, 1f)] private float effectVolume;
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private MusicManagerData musicManagerData;
 
     [Header("Shooting")]
     [SerializeField] private AudioClip shootingClip;
@@ -29,6 +31,46 @@ public class AudioPlayer : MonoBehaviour
     {
         ManageAudioSingleton();
     }
+    private void Start()
+    {
+        audioSource.clip = musicManagerData.GetOpening();
+    }
+    private void OnEnable()
+    {
+        Debug.Log("OnEnable called");
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if(scene.name == "MainMenu")
+        {
+            audioSource.clip = musicManagerData.GetOpening();
+        }
+        else if(scene.name == "Game")
+        {
+            audioSource.clip = musicManagerData.GetCombat();
+        }
+        else if(scene.name == "GameOver")
+        {
+            audioSource.clip= musicManagerData.GetClosing();
+        }
+        audioSource.Play();
+    }
+    private void OnDisable()
+    {
+        Debug.Log("OnEnable called");
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    public void SetAudioBoss()
+    {
+        audioSource.clip = musicManagerData.GetBoss();
+        audioSource.Play();
+    }
+    public void SetAudioCombat()
+    {
+        audioSource.clip = musicManagerData.GetCombat();
+        audioSource.Play();
+    }
     private void ManageAudioSingleton()
     {
         if(instance != null)
@@ -49,6 +91,14 @@ public class AudioPlayer : MonoBehaviour
     public void SetMusicVolume(float volume)
     {
         audioSource.volume = volume;
+    }
+    public void MuteMusic()
+    {
+        audioSource.mute = true;
+    }
+    public void PlayMusic() 
+    { 
+        audioSource.mute = false;
     }
     public void PlayShootingClip()
     {

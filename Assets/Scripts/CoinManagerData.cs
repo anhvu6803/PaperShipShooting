@@ -13,20 +13,20 @@ public class CoinManagerData : ScriptableObject
 
     public void SetCoinManager(int coin)
     {
-        PlayerPrefs.SetInt(CoinKey, coin);
         this.coin = PlayerPrefs.GetInt(CoinKey);
+        PlayerPrefs.SetInt(CoinKey, this.coin + coin);      
     }
     public int GetCoinManager()
     {
-        return coin;
+        return PlayerPrefs.GetInt(CoinKey);
     }
     public void SetExpManager(int exp)
     {
-        PlayerPrefs.SetInt(ExpKey, exp);
         this.exp = PlayerPrefs.GetInt(ExpKey);
+        PlayerPrefs.SetInt(ExpKey, this.exp + exp);
     }
     public int GetExpManager()
     {
-        return exp;
+        return PlayerPrefs.GetInt(ExpKey);
     }
 }

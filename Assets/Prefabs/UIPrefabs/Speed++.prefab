@@ -31,7 +31,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6115021487451766455}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.04}
   m_AnchorMax: {x: 1, y: 0.27}
@@ -68,9 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: + 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ea88e6c9f8a592441aeb5c001b66a0bf, type: 2}
-  m_sharedMaterial: {fileID: -1594970673218570017, guid: ea88e6c9f8a592441aeb5c001b66a0bf,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -167,7 +165,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6115021487451766455}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.3}
   m_AnchorMax: {x: 1, y: 0.44}
@@ -204,9 +201,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SPEED
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 60ef846fb2b59664694a76120d2f6ed9, type: 2}
-  m_sharedMaterial: {fileID: 5294779946125024407, guid: 60ef846fb2b59664694a76120d2f6ed9,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -291,7 +287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6115021487056831416
 RectTransform:
   m_ObjectHideFlags: 0
@@ -306,7 +302,6 @@ RectTransform:
   m_Children:
   - {fileID: 6115021487451766455}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.37, y: 0}
   m_AnchorMax: {x: 0.63, y: 1}
@@ -376,6 +371,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aff5f1cad0084f84cafabc8d0338d6bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  playerBullet: {fileID: 0}
+  displayUI: {fileID: 0}
 --- !u!1 &6115021487451766448
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +409,6 @@ RectTransform:
   - {fileID: 6115021486643479068}
   - {fileID: 8952595918997456311}
   m_Father: {fileID: 6115021487056831416}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -525,6 +522,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickerType: 3
-  numberIncrease: 50
+  initialNumber: 0
   rateUp: 0.6
   numberMagnitude: 30

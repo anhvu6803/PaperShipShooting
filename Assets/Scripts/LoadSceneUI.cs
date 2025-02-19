@@ -16,12 +16,18 @@ public class LoadSceneUI : MonoBehaviour
     private Vector2 startPosition;
     private Vector2 endPosition;
     private Rigidbody2D rb;
+    private AudioPlayer audioPlayer;
+    private void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
     void Start()
     {
         SetPositonLoading();
         loadBar.maxValue = endPosition.x - startPosition.x;
         ship.transform.position = startPosition;
         rb = ship.GetComponent<Rigidbody2D>();
+        audioPlayer.MuteMusic();
     }
     private void SetPositonLoading()
     {
@@ -44,6 +50,7 @@ public class LoadSceneUI : MonoBehaviour
     {
         if (loadBar.value == loadBar.maxValue)
         {
+            audioPlayer.PlayMusic();
             SceneManager.LoadScene(sceneData.LoadName());
         }
     }

@@ -10,11 +10,21 @@ public class BossManager : MonoBehaviour
     [SerializeField] private CurtainManager curtainManager;
     [SerializeField] private GameObject bossCountDownSlider;
     [SerializeField] private CountDownBossAppear bossAppear;
+
+    private AudioPlayer audioPlayer;
     private bool isBossDie;
     private Coroutine bossDieCoroutine;
-    private void Start()
+    private void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
+    private void OnEnable()
     {
         bossAppear.onBossBattle += IsBossBattle;
+    }
+    private void OnDisable()
+    {
+        bossAppear.onBossBattle -= IsBossBattle;
     }
     private void Update()
     {
@@ -31,6 +41,7 @@ public class BossManager : MonoBehaviour
     public void IsBossBattle(bool isActive)
     {
         bossCountDownSlider.SetActive(!isActive);
+        audioPlayer.SetAudioBoss();
     }
     private void ManageDelayToLoadGame()
     {
@@ -59,6 +70,7 @@ public class BossManager : MonoBehaviour
         StartCoroutine(curtainManager.CurtainDown());
         yield return new WaitForSeconds(1f);
         StartCoroutine(curtainManager.CurtainUp());
+        audioPlayer.SetAudioCombat();
 
     }
 

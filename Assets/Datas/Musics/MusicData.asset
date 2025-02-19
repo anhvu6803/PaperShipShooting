@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cc9d140031aca8419795d1096eefc84, type: 3}
+  m_Name: MusicData
+  m_EditorClassIdentifier: 
+  openingClip: {fileID: 8300000, guid: 985e286fa0299204ebe4c35760fa3034, type: 3}
+  closingClip: {fileID: 8300000, guid: e57f398bf862c3e40975720ea2beb697, type: 3}
+  combatClip: {fileID: 8300000, guid: aaf633dde62acdb4fb160c8650907c7b, type: 3}
+  bossClip: {fileID: 8300000, guid: 3646f7c6a45acca4aa713058b932bf16, type: 3}

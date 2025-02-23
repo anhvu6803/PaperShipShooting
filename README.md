@@ -23,7 +23,7 @@ Papership Shooter là một dự án game bắn súng arcade chưa hoàn chỉnh
 
 - Chạy thử nghiệm trong Unity Editor.
 
-🎮 Cách chơi (Dự kiến)
+🎮 Cách chơi
 
 - Di chuyển: Click vào màn hình để điều khiển máy bay giấy.
 

@@ -5,7 +5,7 @@ Papership Shooter là một dự án game bắn súng arcade chưa hoàn chỉnh
 
 Điều khiển đơn giản nhưng đầy thử thách.
 
-- Nhiều loại kẻ thù với AI thông minh.
+- Nhiều loại kẻ thù.
 
 - Vật phẩm hỗ trợ giúp bạn chiến đấu hiệu quả hơn.
 
